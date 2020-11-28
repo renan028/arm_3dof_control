@@ -212,7 +212,7 @@ Eigen::Vector3d Robot::getJoints() {
 void Robot::update(const Eigen::Vector3d& u, double dt) {
   joints_->q1 += u[0] * dt; 
   joints_->q2 += u[1] * dt; 
-  joints_->q2 += u[2] * dt; 
+  joints_->q3 += u[2] * dt; 
 }
 
 
