@@ -30,23 +30,23 @@ Joint No | Min limit | Max limit
  */
 class Robot {
   
-  std::function<Eigen::Vector3d(const Eigen::Vector3d& joints)> fk_;
-  std::function<Eigen::Vector3d(double, double, double)> ik_;
+  std::function<Eigen::Vector3f(const Eigen::Vector3f& joints)> fk_;
+  std::function<Eigen::Vector3f(float, float, float)> ik_;
   // TODO: get from file parameters
-  Eigen::Vector3d joints_min = {- M_PI, - M_PI_2, - M_PI};
-  Eigen::Vector3d joints_max = {M_PI, M_PI_2, M_PI};
+  Eigen::Vector3f joints_min = {- M_PI, - M_PI_2, - M_PI};
+  Eigen::Vector3f joints_max = {M_PI, M_PI_2, M_PI};
   std::unique_ptr<RemyJoints> joints_;
 
   public:
     Robot();
-    Robot(double q1, double q2, double q3);
+    Robot(float q1, float q2, float q3);
     ~Robot() = default;
 
     /*  It returns the foward kinematics for the R-RR robot. 
       * \param joints the current values for robot joints
       * \return the end-effector position (not pose)
     */
-    Eigen::Vector3d forwardKinematics(const Eigen::Vector3d& joints);
+    Eigen::Vector3f forwardKinematics(const Eigen::Vector3f& joints);
     
     /*  It returns the inverse kinematics for the R-RR (elbow) robot. 
       * \param x
@@ -54,7 +54,7 @@ class Robot {
       * \param z
       * \return the end-effector position (not pose)
     */
-    Eigen::Vector3d inverseKinematics(double x, double y, double z);
+    Eigen::Vector3f inverseKinematics(float x, float y, float z);
 
     /* Types of Foward Kinematics*/
     enum class FkType {
@@ -83,14 +83,16 @@ class Robot {
      * here)
      * \return robot's joints
     */
-    Eigen::Vector3d getJoints();
+    Eigen::Vector3f getJoints();
+
+    
 
     /* It is the system model qdot = u, thus q = u * dt. It integrates the 
      * input control.
      * \param u the input control
      * \param dt the integration step
     */
-    void update(const Eigen::Vector3d& u, double dt);
+    void update(const Eigen::Vector3f& u, float dt);
   
   private: 
 
@@ -98,7 +100,7 @@ class Robot {
     /* The position was analytically calculated and the result was pasted here
      * \param joints the current values for robot joints
     */
-    Eigen::Vector3d fastForwardKinematics(const Eigen::Vector3d& joints);
+    Eigen::Vector3f fastForwardKinematics(const Eigen::Vector3f& joints);
 
     /* The forward kinematics is computed by the multiplication of the 
      * homogeneous transformations T0*T1*T2*T3, which can be formed directly 
@@ -109,7 +111,7 @@ class Robot {
        *   0          |  0                     | 0                     | 1
      * \param joints the current values for robot joints
     */
-    Eigen::Vector3d forwardKinematicsGeneric(const Eigen::Vector3d& joints);
+    Eigen::Vector3f forwardKinematicsGeneric(const Eigen::Vector3f& joints);
 
     /* It uses the Jacobian to iteratively compute the inverse kinematics.
      * 1) e = Xg - X
@@ -122,8 +124,9 @@ class Robot {
      * \param error the desired error
      * \return the joints to reach (x, y, z)
     */
-    Eigen::Vector3d jacobTransposeIK(double x, double y, double z, 
-      const Eigen::Vector3d& q0 = {0, 0, 0}, double error = 1e-3);
+   // TODO: this should be robot config
+    Eigen::Vector3f jacobTransposeIK(float x, float y, float z, 
+      const Eigen::Vector3f& q0 = {0, 0, 0}, float error = 1e-3);
 
     /* It uses the Damped least squares method to iteratively compute the 
      * inverse kinematics.
@@ -137,8 +140,8 @@ class Robot {
      * \param error the desired error
      * \return the joints to reach (x, y, z)
     */
-    Eigen::Vector3d dampedIK(double x, double y, double z, 
-      const Eigen::Vector3d& q0 = {0, 0, 0}, double error = 1e-3);
+    Eigen::Vector3f dampedIK(float x, float y, float z, 
+      const Eigen::Vector3f& q0 = {0, 0, 0}, float error = 1e-3);
 
     /* It computes the analytical solution for inverse kinematics, for this 
      * specific case by algebric manipulation of the translation vector, and using 
@@ -149,14 +152,14 @@ class Robot {
      * \param z 
      * \return the joints to reach (x, y, z)
     */
-    Eigen::Vector3d analyticalInverseKinematics(double x, double y, double z);
+    Eigen::Vector3f analyticalInverseKinematics(float x, float y, float z);
 
   public:
     /* It calculates the Jacobian (dP/dtheta only translation) 
     * \param joints the current values for robot joints
     * \return the jacobian as an eigen matrix (3x3)
     */
-    JacobMP jacob(const Eigen::Vector3d& joints);
+    JacobMP jacob(const Eigen::Vector3f& joints);
 };
 
 } // end namespace remy_robot_cotrol

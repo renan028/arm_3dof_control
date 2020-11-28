@@ -5,7 +5,7 @@
 
 using namespace remy_robot_control;
 
-const std::vector<std::vector<double>> joints = {
+const std::vector<std::vector<float>> joints = {
     {1, 0.75, 2.5}, 
     {-2, 0.5, 3},
     {1.25, 0.7, 2.0},
@@ -17,7 +17,7 @@ const std::vector<std::vector<double>> joints = {
     {-3.14, 1.57, 3.14} // singularity
 };
 
-const std::vector<std::vector<double>> xyz = {
+const std::vector<std::vector<float>> xyz = {
     {4.694, 7.311, 2.867},
     {-4.039, -8.825, 0.6432},
     {2.934, 8.829, 5.358},
@@ -34,9 +34,10 @@ TEST(IKTest, analytical)
   Robot robot;  
   for (size_t i = 0; i < xyz.size(); ++i) {
     auto result = robot.inverseKinematics(xyz[i][0], xyz[i][1], xyz[i][2]);
-    EXPECT_NEAR(result[0], joints[i][0], 1e-2);
-    EXPECT_NEAR(result[1], joints[i][1], 1e-2);
-    EXPECT_NEAR(result[2], joints[i][2], 1e-2);
+    auto xyz_result = robot.forwardKinematics(result);
+    EXPECT_NEAR(xyz_result[0], xyz[i][0], 1e-2);
+    EXPECT_NEAR(xyz_result[1], xyz[i][1], 1e-2);
+    EXPECT_NEAR(xyz_result[2], xyz[i][2], 1e-2);
   }
 }
 

@@ -12,12 +12,12 @@
  */
 class Trajectory {
   public: 
-    Eigen::Vector3d x;
-    Eigen::Vector3d v;
-    std::vector<Eigen::Vector4d> waypoints;
-    std::vector<double> times;
+    Eigen::Vector3f x;
+    Eigen::Vector3f v;
+    std::vector<Eigen::Vector4f> waypoints;
+    std::vector<float> times;
 
-    Trajectory(const std::vector<Eigen::Vector4d>& _waypoints) : 
+    Trajectory(const std::vector<Eigen::Vector4f>& _waypoints) : 
         waypoints(_waypoints) {
       times.reserve(waypoints.size());
       for (auto waypoint : waypoints) {
@@ -25,7 +25,7 @@ class Trajectory {
       }
     }
     
-    bool update(double t) {
+    bool update(float t) {
       auto it = std::lower_bound(times.begin(), times.end(), t);
       if (it == times.end()) return false;
       
@@ -33,14 +33,14 @@ class Trajectory {
       index = (index >= times.size()) ? times.size() - 1 : index;
       auto t0 = (index == 0) ? 0 : times[index - 1];
       auto tf = times[index];
-      auto x0 = (index == 0) ? Eigen::Vector3d::Zero() : 
-        Eigen::Vector3d(waypoints[index - 1].head(3));
-      auto xf = Eigen::Vector3d(waypoints[index].head(3));
+      auto x0 = (index == 0) ? Eigen::Vector3f::Zero() : 
+        Eigen::Vector3f(waypoints[index - 1].head(3));
+      auto xf = Eigen::Vector3f(waypoints[index].head(3));
       
       // x(t) = x0 + v(t-t0)
       // v = (xf - x0) / (tf - t0)
       if (tf == t0) {
-        v = Eigen::Vector3d::Zero();
+        v = Eigen::Vector3f::Zero();
         x = xf;
         return true;
       }

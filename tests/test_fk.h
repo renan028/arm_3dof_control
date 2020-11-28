@@ -5,7 +5,7 @@
 
 using namespace remy_robot_control;
 
-const std::vector<std::vector<double>> joints_set = {
+const std::vector<std::vector<float>> joints_set = {
     {1, 0.75, 2.5}, 
     {-2, 0.5, 3},
     {1.25, 0.7, 2.0},
@@ -17,7 +17,7 @@ const std::vector<std::vector<double>> joints_set = {
     {-3.14, -1.57, -3.14}
 };
 
-const std::vector<std::vector<double>> solution_set = {
+const std::vector<std::vector<float>> solution_set = {
     {4.694, 7.311, 2.867},
     {-4.039, -8.825, 0.6432},
     {2.934, 8.829, 5.358},
