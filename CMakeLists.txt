@@ -23,6 +23,12 @@ if(GTEST_FOUND)
       src/control.cc 
       src/robot.cc 
       src/utils.cc) 
+  add_executable(${PROJECT_NAME}_Test_Integration tests/test_integration.cc 
+      src/control.cc 
+      src/robot.cc 
+      src/utils.cc
+      src/robot_system.cc) 
   TARGET_LINK_LIBRARIES(${PROJECT_NAME}_Test GTest::GTest GTest::Main Eigen3::Eigen)
   TARGET_LINK_LIBRARIES(${PROJECT_NAME}_Control_Test GTest::GTest GTest::Main Eigen3::Eigen)
+  TARGET_LINK_LIBRARIES(${PROJECT_NAME}_Test_Integration GTest::GTest GTest::Main Eigen3::Eigen)
 endif()
