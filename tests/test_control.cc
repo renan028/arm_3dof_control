@@ -31,7 +31,59 @@ TEST(Control, init)
   }
 }
 
-TEST(Control, control) 
+void assertPosition(const Eigen::Vector3d& p, double t) {
+  double tol = 1e-2;
+  if (t == 1.5) {
+    EXPECT_NEAR(p[0], 17, tol);
+    EXPECT_NEAR(p[1], 0, tol);
+    EXPECT_NEAR(p[2], 0, tol);
+    return;
+  }
+
+  if (t == 3.5) {
+    EXPECT_NEAR(p[0], 15, tol);
+    EXPECT_NEAR(p[1], 1.5, tol);
+    EXPECT_NEAR(p[2], 1.5, tol);
+    return;
+  }
+
+  if (t == 3.5) {
+    EXPECT_NEAR(p[0], 15, tol);
+    EXPECT_NEAR(p[1], 1.5, tol);
+    EXPECT_NEAR(p[2], 1.5, tol);
+    return;
+  }
+
+  if (t == 5.0) {
+    EXPECT_NEAR(p[0], 15, tol);
+    EXPECT_NEAR(p[1], -1.5, tol);
+    EXPECT_NEAR(p[2], 1.5, tol);
+    return;
+  }
+
+  if (t == 7.0) {
+    EXPECT_NEAR(p[0], 15, tol);
+    EXPECT_NEAR(p[1], -1.5, tol);
+    EXPECT_NEAR(p[2], -1.5, tol);
+    return;
+  }
+
+  if (t == 9.0) {
+    EXPECT_NEAR(p[0], 15, tol);
+    EXPECT_NEAR(p[1], 1.5, tol);
+    EXPECT_NEAR(p[2], -1.5, tol);
+    return;
+  }
+
+  if (t == 9.0) {
+    EXPECT_NEAR(p[0], 20, tol);
+    EXPECT_NEAR(p[1], 0, tol);
+    EXPECT_NEAR(p[2], 0, tol);
+    return;
+  }
+}
+
+TEST(Control, feedforward) 
 {
   std::string input = std::string(TEST_DIR) + std::string("/input.in");
   Control control(std::move(input));
@@ -41,7 +93,22 @@ TEST(Control, control)
     auto u = control.computeVelocityControl(robot.getJoints(), t);
     robot.update(u, dt);
     auto p = robot.forwardKinematics(robot.getJoints());
-    std::cout << p[0] << ", " << p[1] << ", " << p[2] << ", " << t << "\n";
+    assertPosition(p, t);
+  }
+}
+
+TEST(Control, analytical) 
+{
+  std::string input = std::string(TEST_DIR) + std::string("/input.in");
+  Control control(std::move(input));
+  Robot robot(0, 0, 0);
+  control.setControlStrategy(Control::ControlType::analytical);
+  double dt = 0.02;
+  for (double t = 0; t < 11; t+= 0.02) {
+    auto u = control.computeVelocityControl(robot.getJoints(), t);
+    robot.update(u, dt);
+    auto p = robot.forwardKinematics(robot.getJoints());
+    assertPosition(p, t);
   }
 }
 
