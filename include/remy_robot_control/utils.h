@@ -37,4 +37,17 @@ Eigen::Vector3f uchar3ToEigen3f(const std::vector<unsigned char>& v_uchar);
  */
 std::vector<unsigned char> eigen3fToUchar3(const Eigen::Vector3f& vec3);
 
+/* Encoder output to joint [-pi, pi]. The encoder is 12-bit precision.
+ * \param joint_int
+ * \return joint_float
+*/
+float encoderToJoint(int joint_int);
+
+/* It mocks the precision lost 12-bit of the encoder and it outputs the new 
+ * joint [-pi, pi]. Inline modification. 
+ * \param joint
+*/
+void mockEncoderPrecisionLost(float& joint);
+void mockEncoderPrecisionLost(Eigen::Vector3f& joints);
+
 }

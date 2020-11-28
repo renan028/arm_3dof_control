@@ -22,21 +22,24 @@ Eigen::Affine3f DHToAffine(float theta, float alpha, float link_length,
 
 
 float charToFloat(unsigned char c[4]) {
-  float f = *(float *)&c;
+  float f = *(float*)c;
   return f;
 }
 
 unsigned char* floatToChar(float f) {
-  unsigned char *s = (unsigned char *) &f;
+  unsigned char* s = new unsigned char[sizeof(float)];
+  *(float*)(s) = f;
   return s;
 }
 
 Eigen::Vector3f uchar3ToEigen3f(const std::vector<unsigned char>& v_uchar) {
-  assert(v_uchar.size() == 12);
   Eigen::Vector3f u = Eigen::Vector3f::Zero();
+  if (v_uchar.size() == 0)
+    return u;
   unsigned char c1[4] = {v_uchar[0], v_uchar[1], v_uchar[2], v_uchar[3]};
   unsigned char c2[4] = {v_uchar[4], v_uchar[5], v_uchar[6], v_uchar[7]};
   unsigned char c3[4] = {v_uchar[8], v_uchar[9], v_uchar[10], v_uchar[11]};
+
   u[0] = charToFloat(c1);
   u[1] = charToFloat(c2);
   u[2] = charToFloat(c3);
@@ -58,6 +61,19 @@ std::vector<unsigned char> eigen3fToUchar3(const Eigen::Vector3f& vec3) {
   return v_char;
 }
 
+float encoderToJoint(int joint_int) {
+  return 2 * M_PI * joint_int / 4096 - M_PI;
+}
 
+void mockEncoderPrecisionLost(float& joint) {
+  int n = (int) (4096 * (joint + M_PI) / (2 * M_PI));
+  joint = encoderToJoint(n);
+}
+
+void mockEncoderPrecisionLost(Eigen::Vector3f& joints) {
+  mockEncoderPrecisionLost(joints[0]);
+  mockEncoderPrecisionLost(joints[1]);
+  mockEncoderPrecisionLost(joints[2]);
+}
 
 }
