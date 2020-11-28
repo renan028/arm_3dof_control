@@ -2,7 +2,9 @@
 
 namespace remy_robot_control {
 
-/* A custom class to handle angles properly (-PI, PI) */
+/* A custom class to handle angles properly (-PI, PI). One may choose the angle
+ * Limits.
+*/
 template <class T = double>
 class Angle {
   T value_;
