@@ -26,7 +26,6 @@ namespace remy_robot_control {
  * and receives feedback from the robot.
 */
 class Control {
-  Connection connection;
   std::unique_ptr<Trajectory> trajectory;
   Robot model;
   std::function<Eigen::Vector3f(Eigen::Vector3f, float)> control_;
@@ -40,7 +39,7 @@ class Control {
     ~Control();
 
     /* It creates a thread to control the arm. */
-    void start();
+    void start(std::weak_ptr<Connection> con);
 
     /* It stops the thread which controls the arm. */
     void stop();
@@ -74,6 +73,8 @@ class Control {
     */
     void computeVelocityControl(const Eigen::Vector3f& joints, float t);
 
+    std::shared_ptr<Connection> connection;
+
   private:
     /* It read the input file 
      * \param input absolute file path
@@ -83,7 +84,7 @@ class Control {
     /* This is the main thread of the controller. It periodically sends control 
      * signals to the robot.
     */
-    void main();
+    void main(std::weak_ptr<Connection> con);
   
     /* The robot motion can be described by: qdot = u, where u is the velocity 
      * control signal (vector) applied to the motor drive of each joint.

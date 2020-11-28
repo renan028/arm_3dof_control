@@ -10,6 +10,7 @@
 namespace remy_robot_control {
 
 Control::Control(const std::string& input) : 
+    connection(std::make_shared<Connection>()),
     stop_(false),
     clock(std::chrono::system_clock::now()) 
 {
@@ -21,10 +22,10 @@ Control::~Control() {
   stop();
 }
 
-void Control::start() {
+void Control::start(std::weak_ptr<Connection> con) {
   stop();
   stop_ = false;
-  thread = std::thread(&Control::main, this);
+  thread = std::thread(&Control::main, this, con);
 }
 
 void Control::stop() {
@@ -46,27 +47,36 @@ void Control::readInput(const std::string& input) {
   trajectory = std::make_unique<Trajectory>(std::move(waypoints));
 }
 
-void Control::main() {
-  connection.open();
+void Control::main(std::weak_ptr<Connection> con) {
+  connection->open();
+  while(auto conn = con.lock()) {
+    if (!conn->isOpened()) {
+      std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    }
+    else break;
+  }
+
   clock = std::chrono::system_clock::now();
-  while(true) {
+  while(auto conn = con.lock()) {
+    if (!conn->isOpened()) break;
     if (stop_) {
       break;
     }
     auto new_clock = std::chrono::system_clock::now();
     std::chrono::duration<double> diff = new_clock - clock;
+    std::cout << "t: " << diff.count() << "\n";
     
     std::vector<unsigned char> joints;
-    connection.receive(joints);
+    conn->receive(joints);
     auto q = uchar3ToEigen3f(joints);
     
     computeVelocityControl(q, diff.count());
     auto u_eigen = getControlSignal();
     auto u = eigen3fToUchar3(u_eigen);
-    connection.send(u);
+    connection->send(u);
     std::this_thread::sleep_for(std::chrono::milliseconds(20));
   }
-  connection.close();
+  connection->close();
 }
 
 void Control::setControlStrategy(ControlType type) {
