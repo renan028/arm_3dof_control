@@ -398,7 +398,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>It uses the Damped least squares method to iteratively compute the inverse kinematics. The algorithm' steps are: 1) <img class="formulaInl" alt="$ e = x_g - x $" src="form_8.png"/>, 2) compute <img class="formulaInl" alt="$ J(q) $" src="form_9.png"/>, 3) <img class="formulaInl" alt="$ q = q + J^t * (J * J^t + \lambda^2 * I)^{-1} * e $" src="form_11.png"/> </p><dl class="params"><dt>Parameters</dt><dd>
+<p>It uses the Damped least squares method to iteratively compute the inverse kinematics. The algorithm' steps are: 1) <img class="formulaInl" alt="$ e = x_g - x $" src="form_22.png"/>, 2) compute <img class="formulaInl" alt="$ J(q) $" src="form_23.png"/>, 3) <img class="formulaInl" alt="$ q = q + J^t * (J * J^t + \lambda^2 * I)^{-1} * e $" src="form_25.png"/> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td></td></tr>
     <tr><td class="paramname">y</td><td></td></tr>
@@ -492,7 +492,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The forward kinematics is computed by the multiplication of the homogeneous transformations <img class="formulaInl" alt="$ T_0*T_1*T_2*T_3 $" src="form_7.png"/>, which can be formed directly from the DH parameters. T = </p><pre class="fragment">* +--------------+------------------------+-----------------------+--------------+
+<p>The forward kinematics is computed by the multiplication of the homogeneous transformations <img class="formulaInl" alt="$ T_0*T_1*T_2*T_3 $" src="form_21.png"/>, which can be formed directly from the DH parameters. T = </p><pre class="fragment">* +--------------+------------------------+-----------------------+--------------+
 * |  cos(theta)  | -sin(theta)*cos(alpha) | sin(theta)sin(alpha)  | a*cos(theta) |
 * +--------------+------------------------+-----------------------+--------------+
 * |  sin(theta)  | cos(theta)*cos(alpha)  | -cos(theta)sin(alpha) | a*sin(theta) |
@@ -586,7 +586,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>It calculates the Jacobian ( <img class="formulaInl" alt="$\frac{dP}{d\theta}$" src="form_12.png"/> only translation) </p><dl class="params"><dt>Parameters</dt><dd>
+<p>It calculates the Jacobian ( <img class="formulaInl" alt="$\frac{dP}{d\theta}$" src="form_26.png"/> only translation) </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">joints</td><td>the current values for robot joints </td></tr>
   </table>
@@ -647,7 +647,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>It uses the Jacobian to iteratively compute the inverse kinematics. The algorithm' steps are: 1) <img class="formulaInl" alt="$ e = x_g - x $" src="form_8.png"/>, 2) compute <img class="formulaInl" alt="$ J(q) $" src="form_9.png"/>, 3) <img class="formulaInl" alt="$ q = q + J^t * e * \alpha $" src="form_10.png"/> </p><dl class="params"><dt>Parameters</dt><dd>
+<p>It uses the Jacobian to iteratively compute the inverse kinematics. The algorithm' steps are: 1) <img class="formulaInl" alt="$ e = x_g - x $" src="form_22.png"/>, 2) compute <img class="formulaInl" alt="$ J(q) $" src="form_23.png"/>, 3) <img class="formulaInl" alt="$ q = q + J^t * e * \alpha $" src="form_24.png"/> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td></td></tr>
     <tr><td class="paramname">y</td><td></td></tr>
@@ -736,7 +736,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>It is the system model <img class="formulaInl" alt="$ \dot{q}=u $" src="form_2.png"/>, thus <img class="formulaInl" alt="$ q=u*dt $" src="form_3.png"/>. It integrates the input control. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>It is the system model <img class="formulaInl" alt="$ \dot{q}=u $" src="form_19.png"/>, thus <img class="formulaInl" alt="$ q=u*dt $" src="form_20.png"/>. It integrates the input control. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">u</td><td>the input control </td></tr>
     <tr><td class="paramname">dt</td><td>the integration step </td></tr>

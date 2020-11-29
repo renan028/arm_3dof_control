@@ -245,7 +245,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The Analytical <a class="el" href="classremy__robot__control_1_1Control.html">Control</a> solution uses the analytical inverse kinematics and it applies <img class="formulaInl" alt="$u = \frac{dq}{dt} = (q_s - q) / dt$" src="form_35.png"/> </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The Analytical <a class="el" href="classremy__robot__control_1_1Control.html">Control</a> solution uses the analytical inverse kinematics and it applies <img class="formulaInl" alt="$u = \frac{dq}{dt} = (q_s - q) / dt$" src="form_18.png"/> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">joints</td><td>the current robot joints </td></tr>
     <tr><td class="paramname">t</td><td>current time (0 means start time) </td></tr>
@@ -319,14 +319,14 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The robot motion can be described by: <img class="formulaInl" alt="$\dot{q} = u$" src="form_13.png"/>, where <img class="formulaInl" alt="$u$" src="form_14.png"/> is the velocity control signal (vector) applied to the motor drive of each joint. <br />
-We have: <img class="formulaInl" alt="$\dot{x} = J * \dot{q} = J * u$" src="form_15.png"/>, where <img class="formulaInl" alt="$J$" src="form_16.png"/> is the Jacobian <br />
-Then: <img class="formulaInl" alt="$u = J^{-1} * v(t)$" src="form_17.png"/>, where <img class="formulaInl" alt="$v(t)$" src="form_18.png"/> is the cartesian control signal. <br />
- <img class="formulaInl" alt="$e = x_s(t) - x$" src="form_19.png"/>, where <img class="formulaInl" alt="$x_s$" src="form_20.png"/> is the desired cartesian position, <img class="formulaInl" alt="$x$" src="form_21.png"/> the current position. <br />
- <img class="formulaInl" alt="$\dot{e} = \dot{x_s} - v(t)$" src="form_22.png"/>, then we may choose a proportional plus feedforward control law: <br />
- <img class="formulaInl" alt="$ v(t) = \dot{x_s} + \Lambda * e $" src="form_23.png"/>, where <img class="formulaInl" alt="$L = \lambda * I$" src="form_24.png"/> (identity matrix), <img class="formulaInl" alt="$\lambda &gt; 0$" src="form_25.png"/> <br />
-Note that this is the Damping Method (DLS), thus if the robot starts at a position where <img class="formulaInl" alt="$J(q0)$" src="form_26.png"/> is singular and <img class="formulaInl" alt="$v$" src="form_27.png"/> is in its nullspace, it may be impossible to find the inverse kinematics iteratively, and the control fails. The solution is to introduce a term belonging to the nullsapce of <img class="formulaInl" alt="$J$" src="form_16.png"/>: <br />
- <img class="formulaInl" alt="$u = J^{-1} * v + (I - J^{-1} * J) * q_0$" src="form_28.png"/>, where <img class="formulaInl" alt="$q_0$" src="form_29.png"/> is an arbitrary joint velocities to avoid singularities. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The robot motion can be described by: <img class="formulaInl" alt="$\dot{q} = u$" src="form_1.png"/>, where <img class="formulaInl" alt="$u$" src="form_2.png"/> is the velocity control signal (vector) applied to the motor drive of each joint. <br />
+We have: <img class="formulaInl" alt="$\dot{x} = J * \dot{q} = J * u$" src="form_3.png"/>, where <img class="formulaInl" alt="$J$" src="form_4.png"/> is the Jacobian <br />
+Then: <img class="formulaInl" alt="$u = J^{-1} * v(t)$" src="form_5.png"/>, where <img class="formulaInl" alt="$v(t)$" src="form_6.png"/> is the cartesian control signal. <br />
+ <img class="formulaInl" alt="$e = x_s(t) - x$" src="form_7.png"/>, where <img class="formulaInl" alt="$x_s$" src="form_8.png"/> is the desired cartesian position, <img class="formulaInl" alt="$x$" src="form_9.png"/> the current position. <br />
+ <img class="formulaInl" alt="$\dot{e} = \dot{x_s} - v(t)$" src="form_10.png"/>, then we may choose a proportional plus feedforward control law: <br />
+ <img class="formulaInl" alt="$ v(t) = \dot{x_s} + \Lambda * e $" src="form_11.png"/>, where <img class="formulaInl" alt="$L = \lambda * I$" src="form_12.png"/> (identity matrix), <img class="formulaInl" alt="$\lambda &gt; 0$" src="form_13.png"/> <br />
+Note that this is the Damping Method (DLS), thus if the robot starts at a position where <img class="formulaInl" alt="$J(q0)$" src="form_14.png"/> is singular and <img class="formulaInl" alt="$v$" src="form_15.png"/> is in its nullspace, it may be impossible to find the inverse kinematics iteratively, and the control fails. The solution is to introduce a term belonging to the nullsapce of <img class="formulaInl" alt="$J$" src="form_4.png"/>: <br />
+ <img class="formulaInl" alt="$u = J^{-1} * v + (I - J^{-1} * J) * q_0$" src="form_16.png"/>, where <img class="formulaInl" alt="$q_0$" src="form_17.png"/> is an arbitrary joint velocities to avoid singularities. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">joints</td><td>the current robot joints </td></tr>
     <tr><td class="paramname">t</td><td>current time (0 means start time) </td></tr>
