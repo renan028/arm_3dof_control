@@ -10,13 +10,24 @@ RobotSystem::RobotSystem() :
   stop_(false),
   control_signal(Eigen::Vector3f::Zero()),
   clock(std::chrono::system_clock::now()),
-  save_run(true) 
+  save_run(true),
+  sleep_ms(1),
+  encoder_resolution(4096)
 {
 }
 
 RobotSystem::~RobotSystem(){
   stop();
 };
+
+void RobotSystem::setSettings(const RemySystemSettings& settings) {
+  sleep_ms = (int)(1000 * (1.0 / (float)settings.frequency));
+  encoder_resolution = settings.encoder_resolution;
+}
+
+void RobotSystem::setRobotSettings(const RemyRobotSettings& settings) {
+  robot.setSettings(settings);
+}
 
 void RobotSystem::start(std::weak_ptr<Connection> con) {
   stop();
@@ -62,7 +73,7 @@ void RobotSystem::main(std::weak_ptr<Connection> con) {
       save(p, control_signal, q, elapsed_time,file);
     }
 
-    mockEncoderPrecisionLost(q);
+    mockEncoderPrecisionLost(q, encoder_resolution);
     auto qc = eigen3fToUchar3(q);
     connection->send(qc);
     
@@ -70,7 +81,7 @@ void RobotSystem::main(std::weak_ptr<Connection> con) {
     conn->receive(control);
     control_signal = uchar3ToEigen3f(control);
     clock = new_clock;
-    std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    std::this_thread::sleep_for(std::chrono::milliseconds(sleep_ms));
   }
   if (save_run)
     file.close();

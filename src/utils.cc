@@ -65,15 +65,16 @@ float encoderToJoint(int joint_int) {
   return 2 * M_PI * joint_int / 4096 - M_PI;
 }
 
-void mockEncoderPrecisionLost(float& joint) {
-  int n = (int) (4096 * (joint + M_PI) / (2 * M_PI));
+void mockEncoderPrecisionLost(float& joint, int encoder_resolution) {
+  int n = (int) (encoder_resolution * (joint + M_PI) / (2 * M_PI));
   joint = encoderToJoint(n);
 }
 
-void mockEncoderPrecisionLost(Eigen::Vector3f& joints) {
-  mockEncoderPrecisionLost(joints[0]);
-  mockEncoderPrecisionLost(joints[1]);
-  mockEncoderPrecisionLost(joints[2]);
+void mockEncoderPrecisionLost(Eigen::Vector3f& joints, int encoder_resolution) {
+  mockEncoderPrecisionLost(joints[0], encoder_resolution);
+  mockEncoderPrecisionLost(joints[1], encoder_resolution);
+  mockEncoderPrecisionLost(joints[2], encoder_resolution);
+}
 
 RemyRobotSettings parseRobotSetting(const json& j) {
   RemyRobotSettings settings;

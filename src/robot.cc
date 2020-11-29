@@ -6,9 +6,9 @@ namespace remy_robot_control {
 Robot::Robot() {
   setFk();
   setIk();
-  float q1mM[2] = {joints_min[0], joints_max[0]};
-  float q2mM[2] = {joints_min[1], joints_max[1]};
-  float q3mM[2] = {joints_min[2], joints_max[2]};
+  float q1mM[2] = {- M_PI, M_PI};
+  float q2mM[2] = {- M_PI_2, M_PI_2};
+  float q3mM[2] = {- M_PI, M_PI};
   joints_ = std::make_unique<RemyJoints>(q1mM, q2mM, q3mM);
 }
 
@@ -18,6 +18,14 @@ Robot::Robot(float q1, float q2, float q3) : Robot() {
   joints_->q1(q3);
 }
 
+void Robot::setSettings(const RemyRobotSettings& settings) {
+  setFk(settings.fktype);
+  setIk(settings.iktype);
+  float q1mM[2] = {settings.joints_min[0], settings.joints_max[0]};
+  float q2mM[2] = {settings.joints_min[1], settings.joints_max[1]};
+  float q3mM[2] = {settings.joints_min[2], settings.joints_max[2]};
+  joints_ = std::make_unique<RemyJoints>(q1mM, q2mM, q3mM);
+}
 
 void Robot::setFk(FkType type) {
   switch (type)

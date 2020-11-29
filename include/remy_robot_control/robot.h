@@ -47,15 +47,17 @@ class Robot {
   
   std::function<Eigen::Vector3f(const Eigen::Vector3f& joints)> fk_;
   std::function<Eigen::Vector3f(float, float, float)> ik_;
-  // TODO: get from file parameters
-  Eigen::Vector3f joints_min = {- M_PI, - M_PI_2, - M_PI};
-  Eigen::Vector3f joints_max = {M_PI, M_PI_2, M_PI};
   std::unique_ptr<RemyJoints> joints_;
 
   public:
     Robot();
     Robot(float q1, float q2, float q3);
     ~Robot() = default;
+
+    /** It sets the robot settings
+     * \param settings \sa RemyRobotSettings
+     */ 
+    void setSettings(const RemyRobotSettings& settings);
 
     /**  It returns the foward kinematics for the R-RR robot. 
       * \param joints the current values for robot joints

@@ -11,6 +11,7 @@
 
 // 3rd
 #include <json.hpp>
+
 namespace remy_robot_control {
 
 /** A function to compute the Homogenous Transform given the DH parameters for 
@@ -54,9 +55,12 @@ float encoderToJoint(int joint_int);
 /** It mocks the precision lost 12-bit of the encoder and it outputs the new 
  * joint \f$[-\pi, \pi]\f$. Inline modification. 
  * \param joint
+ * \param encoder_resolution 
 */
-void mockEncoderPrecisionLost(float& joint);
-void mockEncoderPrecisionLost(Eigen::Vector3f& joints);
+void mockEncoderPrecisionLost(float& joint, int encoder_resolution);
+void mockEncoderPrecisionLost(Eigen::Vector3f& joints, 
+  int encoder_resolution = 4096);
+
 using json = nlohmann::json;
 
 /** Function to get a value from an attribute given the json file and field

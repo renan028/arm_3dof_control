@@ -11,7 +11,8 @@ namespace remy_robot_control {
 Control::Control(const std::string& input) : 
     connection(std::make_shared<Connection>()),
     stop_(false),
-    clock(std::chrono::system_clock::now()) 
+    clock(std::chrono::system_clock::now()),
+    sleep_ms(20) 
 {
   readInput(input);
   setControlStrategy(ControlType::feedfoward);
@@ -19,6 +20,15 @@ Control::Control(const std::string& input) :
 
 Control::~Control() {
   stop();
+}
+
+void Control::setSettings(const RemyControlSettings& settings) {
+  setControlStrategy(settings.control_type);
+  sleep_ms = std::max(20, (int)(1000 * (1.0 / (float)settings.frequency)));
+}
+
+void Control::setRobotSettings(const RemyRobotSettings& settings) {
+  model.setSettings(settings);
 }
 
 void Control::start(std::weak_ptr<Connection> con) {
@@ -71,7 +81,7 @@ void Control::main(std::weak_ptr<Connection> con) {
     auto u_eigen = getControlSignal();
     auto u = eigen3fToUchar3(u_eigen);
     connection->send(u);
-    std::this_thread::sleep_for(std::chrono::milliseconds(20));
+    std::this_thread::sleep_for(std::chrono::milliseconds(sleep_ms));
   }
   connection->close();
 }
@@ -133,8 +143,7 @@ Eigen::Vector3f Control::feedforwardControl(const Eigen::Vector3f& q,
 
 Eigen::Vector3f Control::analyticalControl(const Eigen::Vector3f& q,
     float t) {
-  // TODO: change hardcoded dt 
-  auto dt = 0.02;
+  float dt = (float)sleep_ms / 1000;
   if (!trajectory->update(t)) {
     return Eigen::Vector3f::Zero();
   }

@@ -33,10 +33,21 @@ class Control {
   std::thread thread;
   std::atomic<bool> stop_;
   std::chrono::time_point<std::chrono::system_clock> clock;
+  int sleep_ms;
 
   public:
     Control(const std::string& input);
     ~Control();
+
+    /** It sets the control settings
+     * \param settings \sa RemyControlSettings
+     */ 
+    void setSettings(const RemyControlSettings& settings);
+
+    /** It changes the robot model settings by a given new one
+     * \param settings new settings
+     */
+    void setRobotSettings(const RemyRobotSettings& settings);
 
     /** It creates a thread to control the arm. */
     void start(std::weak_ptr<Connection> con);

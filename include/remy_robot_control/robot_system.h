@@ -16,10 +16,22 @@ class RobotSystem {
   std::atomic<bool> stop_;
   Eigen::Vector3f control_signal;
   std::chrono::time_point<std::chrono::system_clock> clock;
+  int sleep_ms;
+  int encoder_resolution;
   
   public:
     RobotSystem();
     ~RobotSystem();
+    
+    /** It sets the system settings
+     * \param settings \sa RemySystemSettings
+    */ 
+    void setSettings(const RemySystemSettings& settings);
+
+    /** It changes the robot model settings by a given new one
+     * \param settings new settings
+     */
+    void setRobotSettings(const RemyRobotSettings& settings);
 
     /** It creates a thread to start the robotic system. */
     void start(std::weak_ptr<Connection> con);
