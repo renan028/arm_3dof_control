@@ -97,11 +97,10 @@ To start communication, one must pass the shared communication resource **connec
 
 1. Check if connection is open and the resource is available (*weak_ptr*)
 2. Move the manipulator with the last control input by the elapsed time
-3. Get the new Robot joints with FK
-4. Mock the [Encoder](https://github.com/renan028/robot_control/blob/master/src/utils.cc#L68) precision lost
-5. [Convert](https://github.com/renan028/robot_control/blob/master/src/utils.cc#L24) the joints value to vector\<char> with pointer cast
-6. Send the data through **connection**
-7. Receive the control signal
+3. Get the new manipulator joints from encoder, by mocking the [Encoder](https://github.com/renan028/robot_control/blob/master/src/utils.cc#L68) precision lost
+4. [Convert](https://github.com/renan028/robot_control/blob/master/src/utils.cc#L24) the joints value to vector\<char> with pointer cast
+5. Send the data through **connection**
+6. Receive the control signal
 
 The frequency is 1000 Hz.
 
@@ -132,7 +131,7 @@ Then, in the build folder, run (the two arguments are required):
 ```
 ./RemyRobotControl <path_to_input> <path_to_config>
 ```
-The output file "out.csv" is composed of time, the end-effector path (x,y,z), the joints path (theta1, theta2, theta3) and control sign for each joint.
+The output file "out.csv" is composed of time, the end-effector path (x,y,z), the joints path (theta1, theta2, theta3) and control signal for each joint.
 
 To run unittests, one just need to run them individually, for instance:
 ```
