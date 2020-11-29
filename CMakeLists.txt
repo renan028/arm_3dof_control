@@ -10,15 +10,19 @@ find_package(GTest)
 include_directories(
   include/remy_robot_control
 )
-#add_executable(${PROJECT_NAME} src/Robot.cc src/utils.cc)
-#target_link_libraries(${PROJECT_NAME} Eigen3::Eigen)
+add_executable(${PROJECT_NAME} src/main.cc 
+  src/control.cc 
+  src/robot.cc 
+  src/utils.cc
+  src/robot_system.cc)
+target_link_libraries(${PROJECT_NAME} Eigen3::Eigen -pthread)
 
 if(GTEST_FOUND)
   get_filename_component(DATA_TEST_DIR "tests/data" ABSOLUTE)
   configure_file(tests/settings.h.in tests/settings.h)
   include_directories(${CMAKE_CURRENT_BINARY_DIR}/tests)
   enable_testing()
-  add_executable(${PROJECT_NAME}_Test tests/main.cc src/robot.cc src/utils.cc) 
+  add_executable(${PROJECT_NAME}_Test tests/test_main.cc src/robot.cc src/utils.cc) 
   add_executable(${PROJECT_NAME}_Control_Test tests/test_control.cc 
       src/control.cc 
       src/robot.cc 
