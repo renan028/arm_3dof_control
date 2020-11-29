@@ -18,6 +18,25 @@ typedef Eigen::Matrix<float, 6, 3> JacobM;
 typedef Eigen::Matrix<float, 3, 3> JacobMP;
 typedef Angle<float> Angled;
 
+/** Types of Foward Kinematics */
+enum class FkType {
+  fast, ///< hardcoded and specifically for this case, it only computes the end-efector position
+  generic ///< It uses the classic, and generic, transform multiplication with eigen
+};
+
+/** Types of Inverse Kinematics */
+enum class IkType {
+  transpose, ///< Iterative method that uses the jacobian transpose
+  analytical, ///< It explores the translational part of the homogeneous transform
+  damped ///< Damped least squares
+};
+
+/** Types of available Kinematics Control */
+enum class ControlType {
+  feedfoward, ///< Damping Least Square Control with extra term to avoid singularities
+  analytical ///< The analytical solution
+};
+
 struct RemyJoints {
   Angled q1;
   Angled q2;

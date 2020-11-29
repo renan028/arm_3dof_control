@@ -44,7 +44,7 @@ TEST(IKTest, analytical)
 TEST(IKTest, transpose) 
 {
   Robot robot;  
-  robot.setIk(Robot::IkType::transpose);
+  robot.setIk(IkType::transpose);
   for (size_t i = 0; i < 5; ++i) {
     auto result = robot.inverseKinematics(xyz[i][0], xyz[i][1], xyz[i][2]);
     auto xyz_result = robot.forwardKinematics(result);
@@ -57,7 +57,7 @@ TEST(IKTest, transpose)
 TEST(IKTest, damped) 
 {
   Robot robot;  
-  robot.setIk(Robot::IkType::damped);
+  robot.setIk(IkType::damped);
   for (size_t i = 0; i < 5; ++i) {
     auto result = robot.inverseKinematics(xyz[i][0], xyz[i][1], xyz[i][2]);
     auto xyz_result = robot.forwardKinematics(result);

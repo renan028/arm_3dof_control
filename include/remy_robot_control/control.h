@@ -54,12 +54,6 @@ class Control {
     */
     Eigen::Vector3f getControlSignal() const;
 
-    /** Types of available Kinematics Control */
-    enum class ControlType {
-      feedfoward, ///< Damping Least Square Control with extra term to avoid singularities
-      analytical ///< The analytical solution
-    };
-
     /** It sets the type of control. Default is Feedfoward */
     void setControlStrategy(ControlType type);
 

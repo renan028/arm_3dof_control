@@ -44,7 +44,7 @@ TEST(FKTest, genericFK)
 TEST(FKTest, fastFK) 
 {
   Robot robot;  
-  robot.setFk(Robot::FkType::fast);
+  robot.setFk(FkType::fast);
   for (size_t i = 0; i < joints_set.size(); ++i) {
     auto result = robot.forwardKinematics({joints_set[i][0], joints_set[i][1], 
       joints_set[i][2]});

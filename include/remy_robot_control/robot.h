@@ -71,19 +71,6 @@ class Robot {
     */
     Eigen::Vector3f inverseKinematics(float x, float y, float z);
 
-    /** Types of Foward Kinematics */
-    enum class FkType {
-      fast, ///< hardcoded and specifically for this case, it only computes the end-efector position
-      generic ///< It uses the classic, and generic, transform multiplication with eigen
-    };
-
-    /** Types of Inverse Kinematics */
-    enum class IkType {
-      transpose, ///< Iterative method that uses the jacobian transpose
-      analytical, ///< It explores the translational part of the homogeneous transform
-      damped ///< Damped least squares
-    };
-
     /**  It changes the foward kinematics method 
       * \param type \sa FKType
     */

@@ -102,7 +102,7 @@ TEST(Control, analytical)
   std::string input = std::string(TEST_DIR) + std::string("/input.in");
   Control control(std::move(input));
   Robot robot(0, 0, 0);
-  control.setControlStrategy(Control::ControlType::analytical);
+  control.setControlStrategy(ControlType::analytical);
   float dt = 0.02;
   for (float t = 0; t < 11; t+= 0.02) {
     control.computeVelocityControl(robot.getJoints(), t);
