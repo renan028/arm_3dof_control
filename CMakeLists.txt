@@ -9,6 +9,7 @@ find_package(GTest)
 
 include_directories(
   include/remy_robot_control
+  include/3rdparty
 )
 add_executable(${PROJECT_NAME} src/main.cc 
   src/control.cc 
