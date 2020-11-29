@@ -1,8 +1,16 @@
 #pragma once
 
-#include <Eigen/Geometry>
+// remy
+#include <types.h>
+
+// std
 #include <vector>
 
+// Eigen
+#include <Eigen/Geometry>
+
+// 3rd
+#include <json.hpp>
 namespace remy_robot_control {
 
 /** A function to compute the Homogenous Transform given the DH parameters for 
@@ -49,5 +57,27 @@ float encoderToJoint(int joint_int);
 */
 void mockEncoderPrecisionLost(float& joint);
 void mockEncoderPrecisionLost(Eigen::Vector3f& joints);
+using json = nlohmann::json;
+
+/** Function to get a value from an attribute given the json file and field
+ * \param j the jason file
+ * \param field the field to get attribute from
+ * \param att the attribute
+ * \return value
+ */
+template<class T>
+T parseJsonFieldAtt(const json& j, const std::string& field, 
+    const std::string& att) {
+  return j[field][att];
+}
+
+/** Function to retrieve robot settings from json file */ 
+RemyRobotSettings parseRobotSetting(const json& j);
+
+/** Function to retrieve system settings from json file */ 
+RemySystemSettings parseSystemSetting(const json& j);
+
+/** Function to retrieve control settings from json file */ 
+RemyControlSettings parseControlSetting(const json& j);
 
 }

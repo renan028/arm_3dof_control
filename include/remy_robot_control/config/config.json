@@ -1,0 +1,19 @@
+{
+  "robot": {
+    "ik": "analytical",
+    "fk": "fast",
+    "joints_min": [-3.14159, -1.570796 , -3.14159],
+    "joints_max": [3.14159, 1.570796 , 3.14159]
+  },
+  
+  "control": {
+    "type": "feedfoward",
+    "frequency": 50
+  },
+  
+  "robot_system": {
+    "frequency": 1000,
+    "save_output": true,
+    "encoder_resolution": 4096
+  }
+}

@@ -74,6 +74,56 @@ void mockEncoderPrecisionLost(Eigen::Vector3f& joints) {
   mockEncoderPrecisionLost(joints[0]);
   mockEncoderPrecisionLost(joints[1]);
   mockEncoderPrecisionLost(joints[2]);
+
+RemyRobotSettings parseRobotSetting(const json& j) {
+  RemyRobotSettings settings;
+  
+  auto ik_string = parseJsonFieldAtt<std::string>(j, "robot", "ik");
+  if (ik_string == "analytical") 
+    settings.iktype = IkType::analytical;
+  else if (ik_string == "transpose")
+    settings.iktype = IkType::transpose;
+  else if (ik_string == "damped")
+    settings.iktype = IkType::damped;
+
+  auto fk_string = parseJsonFieldAtt<std::string>(j, "robot", "fk");
+  if (fk_string == "fast") 
+    settings.fktype = FkType::fast;
+  else if (fk_string == "generic")
+    settings.fktype = FkType::generic;
+  
+  auto joints_min = parseJsonFieldAtt<std::vector<float>>(j, "robot", 
+    "joints_min");
+  settings.joints_min[0] = joints_min[0];
+  settings.joints_min[1] = joints_min[1];
+  settings.joints_min[2] = joints_min[2];
+
+  auto joints_max = parseJsonFieldAtt<std::vector<float>>(j, "robot", 
+    "joints_max");
+  settings.joints_max[0] = joints_max[0];
+  settings.joints_max[1] = joints_max[1];
+  settings.joints_max[2] = joints_max[2];
+  return settings;
+}
+
+RemySystemSettings parseSystemSetting(const json& j) {
+  RemySystemSettings settings;
+  settings.frequency = parseJsonFieldAtt<int>(j, "robot_system", "frequency"); 
+  settings.save_output = parseJsonFieldAtt<bool>(j, "robot_system", "save_output"); 
+  settings.encoder_resolution = parseJsonFieldAtt<int>(j, "robot_system", 
+    "encoder_resolution");
+  return settings;
+}
+
+RemyControlSettings parseControlSetting(const json& j) {
+  RemyControlSettings settings;
+  settings.frequency = parseJsonFieldAtt<int>(j, "control", "frequency"); 
+  auto control_type = parseJsonFieldAtt<std::string>(j, "control", "type"); 
+  if (control_type == "feedforward")
+    settings.control_type = ControlType::feedfoward;
+  else if (control_type == "analytical")
+    settings.control_type = ControlType::analytical;
+  return settings;
 }
 
 }

@@ -48,4 +48,37 @@ struct RemyJoints {
   }
 };
 
+/** Remy Robot Settings */ 
+struct RemyRobotSettings {
+  IkType iktype;
+  FkType fktype;
+  float joints_min[3];
+  float joints_max[3];
+  RemyRobotSettings() :
+    iktype(IkType::analytical),
+    fktype(FkType::fast),
+    joints_min{- M_PI, - M_PI_2, - M_PI},
+    joints_max{ M_PI,  M_PI_2,  M_PI}{}
+};
+
+/** Remy Control Settings */ 
+struct RemyControlSettings {
+  ControlType control_type;
+  int frequency;
+  RemyControlSettings() :
+    control_type(ControlType::feedfoward),
+    frequency(50){}
+};
+
+/** Remy System Settings */ 
+struct RemySystemSettings {
+  int frequency;
+  bool save_output;
+  int encoder_resolution;
+  RemySystemSettings() :
+    frequency(50),
+    save_output(true),
+    encoder_resolution(4096){}
+};
+  
 } // end namespace remy_robot_cotrol
