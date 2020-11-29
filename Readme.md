@@ -59,7 +59,7 @@ the Kinematic Control:
 
 As in the Robot file, the concept of function object wrapper was explored for flexibility.
 
-The Control settings can the changed with the custom [RemyControlSettings](https://renan028.github.io/robot_control/structremy__robot__control_1_1RemyControlSettings.html) struct. The minimum value (50) for the control's frequency is verified.
+The Control settings can be changed with the custom [RemyControlSettings](https://renan028.github.io/robot_control/structremy__robot__control_1_1RemyControlSettings.html) struct. The minimum value (50) for the control's frequency is verified.
 
 The Control's constructor requires a string argument, which is the absolute path to the input (waypoints) file. It has a method to parse that file.
 
@@ -146,9 +146,10 @@ To run unittests, one just need to run them individually, for instance:
 The output, available in the "result" folder represents the following images:
 
 
-<img src="https://raw.githubusercontent.com/renan028/robot_control/master/images/path.png" width="480">
-<img src="https://raw.githubusercontent.com/renan028/robot_control/master/images/xyz.png" width="480">
-<img src="https://raw.githubusercontent.com/renan028/robot_control/master/images/joints.png" width="480">
-<img src="https://raw.githubusercontent.com/renan028/robot_control/master/images/control.png" width="480">
+<img src="https://raw.githubusercontent.com/renan028/robot_control/master/images/path.png" width="640">
+<img src="https://raw.githubusercontent.com/renan028/robot_control/master/images/xyz.png" width="640">
+<img src="https://raw.githubusercontent.com/renan028/robot_control/master/images/joints.png" width="640">
+<img src="https://raw.githubusercontent.com/renan028/robot_control/master/images/control.png" width="640">
+<img src="https://raw.githubusercontent.com/renan028/robot_control/master/images/error.png" width="640">
 
 
