@@ -4,14 +4,8 @@
 namespace remy_robot_control {
 
 Robot::Robot() {
-  fk_ = [this](const Eigen::Vector3f& joints) {
-    return fastForwardKinematics(joints);
-  };
-
-  ik_ = [this](float x, float y, float z) {
-    return analyticalInverseKinematics(x, y, z);
-  };
-
+  setFk();
+  setIk();
   float q1mM[2] = {joints_min[0], joints_max[0]};
   float q2mM[2] = {joints_min[1], joints_max[1]};
   float q3mM[2] = {joints_min[2], joints_max[2]};
@@ -34,7 +28,7 @@ void Robot::setFk(FkType type) {
       };
       break;
     
-    default:
+    case FkType::generic:
       fk_ = [this](const Eigen::Vector3f& joints) {
         return forwardKinematicsGeneric(joints);
       };
@@ -57,9 +51,9 @@ void Robot::setIk(IkType type) {
       };
       break;
     
-    default:
+    case IkType::analytical:
       ik_ = [this](float x, float y, float z) {
-        return analyticalInverseKinematics(x, y, z);
+        return analyticalIK(x, y, z);
       };
       break;
   }
@@ -160,7 +154,7 @@ Eigen::Vector3f Robot::dampedIK(float x, float y, float z,
   return q;
 }
 
-Eigen::Vector3f Robot::analyticalInverseKinematics(float x, float y, float z)
+Eigen::Vector3f Robot::analyticalIK(float x, float y, float z)
 {
   Eigen::Vector3f q;
   
@@ -213,7 +207,6 @@ void Robot::update(const Eigen::Vector3f& u, float dt) {
   joints_->q2 += u[1] * dt; 
   joints_->q3 += u[2] * dt; 
 }
-
 
 } // end namespace remy_robot_cotrol
 

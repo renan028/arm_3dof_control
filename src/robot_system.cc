@@ -6,7 +6,6 @@
 namespace remy_robot_control {
 
 RobotSystem::RobotSystem() :
-  robot(std::make_unique<Robot>(0,0,0)),
   connection(std::make_shared<Connection>()),
   stop_(false),
   control_signal(Eigen::Vector3f::Zero()),
@@ -55,11 +54,11 @@ void RobotSystem::main(std::weak_ptr<Connection> con) {
     std::chrono::duration<double> diff = new_clock - clock;
     elapsed_time += diff.count();
 
-    robot->update(control_signal, diff.count());
-    auto q = robot->getJoints();
+    robot.update(control_signal, diff.count());
+    auto q = robot.getJoints();
     
     if (save_run) {
-      auto p = robot->forwardKinematics(q);
+      auto p = robot.forwardKinematics(q);
       save(p, control_signal, q, elapsed_time,file);
     }
 
