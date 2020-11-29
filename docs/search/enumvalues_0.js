@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['analytical',['analytical',['../classremy__robot__control_1_1Control.html#a2275987a36b7a490073fc13e1d1c3af8af31285b27408ceebfd949e82c843a05a',1,'remy_robot_control::Control::analytical()'],['../classremy__robot__control_1_1Robot.html#aecbda5c1053ce3349223ea0659c2490caf31285b27408ceebfd949e82c843a05a',1,'remy_robot_control::Robot::analytical()']]]
+  ['analytical',['analytical',['../namespaceremy__robot__control.html#a7576a7042848131c862ecb1a83e6bb6eaf31285b27408ceebfd949e82c843a05a',1,'remy_robot_control::analytical()'],['../namespaceremy__robot__control.html#a1f64bcaf08d0a7230923ec6e3847083daf31285b27408ceebfd949e82c843a05a',1,'remy_robot_control::analytical()']]]
 ];

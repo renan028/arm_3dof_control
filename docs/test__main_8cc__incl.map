@@ -1,12 +1,14 @@
 <map id="tests/test_main.cc" name="tests/test_main.cc">
-<area shape="rect" id="node3" href="$test__fk_8h.html" title="test_fk.h" alt="" coords="167,80,240,107"/>
-<area shape="rect" id="node13" href="$test__ik_8h.html" title="test_ik.h" alt="" coords="265,80,337,107"/>
-<area shape="rect" id="node14" href="$test__angle_8h.html" title="test_angle.h" alt="" coords="553,80,646,107"/>
-<area shape="rect" id="node15" href="$test__trajectory_8h.html" title="test_trajectory.h" alt="" coords="412,80,528,107"/>
-<area shape="rect" id="node16" href="$test__data__convert_8h.html" title="test_data_convert.h" alt="" coords="5,80,143,107"/>
-<area shape="rect" id="node4" href="$robot_8h.html" title="robot.h" alt="" coords="240,155,303,181"/>
-<area shape="rect" id="node5" href="$types_8h.html" title="types.h" alt="" coords="471,229,536,256"/>
-<area shape="rect" id="node10" href="$angle_8h.html" title="angle.h" alt="" coords="402,304,466,331"/>
-<area shape="rect" id="node11" href="$trajectory_8h.html" title="trajectory.h" alt="" coords="541,304,628,331"/>
-<area shape="rect" id="node17" href="$utils_8h.html" title="utils.h" alt="" coords="125,304,183,331"/>
+<area shape="rect" id="node3" href="$test__fk_8h.html" title="test_fk.h" alt="" coords="102,80,175,107"/>
+<area shape="rect" id="node13" href="$test__ik_8h.html" title="test_ik.h" alt="" coords="5,80,77,107"/>
+<area shape="rect" id="node14" href="$test__angle_8h.html" title="test_angle.h" alt="" coords="200,80,293,107"/>
+<area shape="rect" id="node15" href="$test__trajectory_8h.html" title="test_trajectory.h" alt="" coords="369,80,485,107"/>
+<area shape="rect" id="node16" href="$test__data__convert_8h.html" title="test_data_convert.h" alt="" coords="509,80,646,107"/>
+<area shape="rect" id="node19" href="$test__json__parser_8h.html" title="test_json_parser.h" alt="" coords="670,80,799,107"/>
+<area shape="rect" id="node4" href="$robot_8h.html" title="robot.h" alt="" coords="107,155,170,181"/>
+<area shape="rect" id="node5" href="$types_8h.html" title="types.h" alt="" coords="273,229,338,256"/>
+<area shape="rect" id="node10" href="$angle_8h.html" title="angle.h" alt="" coords="131,304,195,331"/>
+<area shape="rect" id="node11" href="$trajectory_8h.html" title="trajectory.h" alt="" coords="371,304,458,331"/>
+<area shape="rect" id="node17" href="$utils_8h.html" title="utils.h" alt="" coords="542,155,599,181"/>
+<area shape="rect" id="node21" href="$settings_8h.html" title="settings.h" alt="" coords="623,155,702,181"/>
 </map>

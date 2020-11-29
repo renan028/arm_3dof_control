@@ -63,7 +63,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -75,18 +74,6 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="robot_8h_source.html">robot.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a8de6b65d680e4a2cc0423f9cd101aee3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#a8de6b65d680e4a2cc0423f9cd101aee3">FkType</a> { <a class="el" href="classremy__robot__control_1_1Robot.html#a8de6b65d680e4a2cc0423f9cd101aee3a31d4541b8e926a24f0c9b835b68cfdf3">FkType::fast</a>, 
-<a class="el" href="classremy__robot__control_1_1Robot.html#a8de6b65d680e4a2cc0423f9cd101aee3a3d517f8924ac7fd03699a29d97dc52d9">FkType::generic</a>
- }</td></tr>
-<tr class="separator:a8de6b65d680e4a2cc0423f9cd101aee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecbda5c1053ce3349223ea0659c2490c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#aecbda5c1053ce3349223ea0659c2490c">IkType</a> { <a class="el" href="classremy__robot__control_1_1Robot.html#aecbda5c1053ce3349223ea0659c2490ca382eb179a7d78f25d89c085988b37e95">IkType::transpose</a>, 
-<a class="el" href="classremy__robot__control_1_1Robot.html#aecbda5c1053ce3349223ea0659c2490caf31285b27408ceebfd949e82c843a05a">IkType::analytical</a>, 
-<a class="el" href="classremy__robot__control_1_1Robot.html#aecbda5c1053ce3349223ea0659c2490ca3597b7c2537fc84f4eb6a9e160ad2fc4">IkType::damped</a>
- }</td></tr>
-<tr class="separator:aecbda5c1053ce3349223ea0659c2490c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4a80ab2cd27f272624adedb6c50a165b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#a4a80ab2cd27f272624adedb6c50a165b">Robot</a> ()</td></tr>
@@ -95,13 +82,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a41cd7892c19e3da20d94a5d4f09ca10f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52af488679a6dc5d6670e0af48ee2e94"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#a52af488679a6dc5d6670e0af48ee2e94">~Robot</a> ()=default</td></tr>
 <tr class="separator:a52af488679a6dc5d6670e0af48ee2e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af796dc5d401a032acc56861d7fcb77c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#af796dc5d401a032acc56861d7fcb77c4">setSettings</a> (const <a class="el" href="structremy__robot__control_1_1RemyRobotSettings.html">RemyRobotSettings</a> &amp;settings)</td></tr>
+<tr class="separator:af796dc5d401a032acc56861d7fcb77c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9db597f41a81c0beb45dec5f39773838"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#a9db597f41a81c0beb45dec5f39773838">forwardKinematics</a> (const Eigen::Vector3f &amp;<a class="el" href="test__ik_8h.html#af1f39187f6cdba930d3102d6942021d6">joints</a>)</td></tr>
 <tr class="separator:a9db597f41a81c0beb45dec5f39773838"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a557fe1629b3043e0baa6756a30ca8083"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#a557fe1629b3043e0baa6756a30ca8083">inverseKinematics</a> (float x, float y, float z)</td></tr>
 <tr class="separator:a557fe1629b3043e0baa6756a30ca8083"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77c83bcf1bee73ad826497c07b00e1dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#a77c83bcf1bee73ad826497c07b00e1dd">setFk</a> (<a class="el" href="classremy__robot__control_1_1Robot.html#a8de6b65d680e4a2cc0423f9cd101aee3">FkType</a> type=<a class="el" href="classremy__robot__control_1_1Robot.html#a8de6b65d680e4a2cc0423f9cd101aee3a31d4541b8e926a24f0c9b835b68cfdf3">FkType::fast</a>)</td></tr>
+<tr class="memitem:a77c83bcf1bee73ad826497c07b00e1dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#a77c83bcf1bee73ad826497c07b00e1dd">setFk</a> (<a class="el" href="namespaceremy__robot__control.html#a4b670130468e92c8c99e26beefd37b6f">FkType</a> type=<a class="el" href="namespaceremy__robot__control.html#a4b670130468e92c8c99e26beefd37b6fa31d4541b8e926a24f0c9b835b68cfdf3">FkType::fast</a>)</td></tr>
 <tr class="separator:a77c83bcf1bee73ad826497c07b00e1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8845c1ccbc94ad3cf2a48dbc6257274e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#a8845c1ccbc94ad3cf2a48dbc6257274e">setIk</a> (<a class="el" href="classremy__robot__control_1_1Robot.html#aecbda5c1053ce3349223ea0659c2490c">IkType</a> type=<a class="el" href="classremy__robot__control_1_1Robot.html#aecbda5c1053ce3349223ea0659c2490caf31285b27408ceebfd949e82c843a05a">IkType::analytical</a>)</td></tr>
+<tr class="memitem:a8845c1ccbc94ad3cf2a48dbc6257274e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#a8845c1ccbc94ad3cf2a48dbc6257274e">setIk</a> (<a class="el" href="namespaceremy__robot__control.html#a7576a7042848131c862ecb1a83e6bb6e">IkType</a> type=<a class="el" href="namespaceremy__robot__control.html#a7576a7042848131c862ecb1a83e6bb6eaf31285b27408ceebfd949e82c843a05a">IkType::analytical</a>)</td></tr>
 <tr class="separator:a8845c1ccbc94ad3cf2a48dbc6257274e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed8d88913878414c81d3c22e0df9033e"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#aed8d88913878414c81d3c22e0df9033e">getJoints</a> ()</td></tr>
 <tr class="separator:aed8d88913878414c81d3c22e0df9033e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,10 +118,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a2daad9df3ede21e8fdb2ff7f72f5c97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a526b6c74d861c7e737e9ba3d590e93a5"><td class="memItemLeft" align="right" valign="top">std::function&lt; Eigen::Vector3f(float, float, float)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#a526b6c74d861c7e737e9ba3d590e93a5">ik_</a></td></tr>
 <tr class="separator:a526b6c74d861c7e737e9ba3d590e93a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac582caf5146d056c6e3e1aa36221b250"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#ac582caf5146d056c6e3e1aa36221b250">joints_min</a> = {- M_PI, - M_PI_2, - M_PI}</td></tr>
-<tr class="separator:ac582caf5146d056c6e3e1aa36221b250"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5338d14cdb3da4bf317bcbd7301646f"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#ab5338d14cdb3da4bf317bcbd7301646f">joints_max</a> = {M_PI, M_PI_2, M_PI}</td></tr>
-<tr class="separator:ab5338d14cdb3da4bf317bcbd7301646f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c526bd7001f6618b6a5959a466dc258"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="structremy__robot__control_1_1RemyJoints.html">RemyJoints</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Robot.html#a4c526bd7001f6618b6a5959a466dc258">joints_</a></td></tr>
 <tr class="separator:a4c526bd7001f6618b6a5959a466dc258"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -157,68 +142,7 @@ Private Attributes</h2></td></tr>
 * +-------+-------+-------+
 * |   3   |  -pi  |   pi  |
 * +-------+-------+-------+
-* </pre> </div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="a8de6b65d680e4a2cc0423f9cd101aee3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8de6b65d680e4a2cc0423f9cd101aee3">&#9670;&nbsp;</a></span>FkType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="classremy__robot__control_1_1Robot.html#a8de6b65d680e4a2cc0423f9cd101aee3">remy_robot_control::Robot::FkType</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Types of Foward Kinematics </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8de6b65d680e4a2cc0423f9cd101aee3a31d4541b8e926a24f0c9b835b68cfdf3"></a>fast&#160;</td><td class="fielddoc"><p>hardcoded and specifically for this case, it only computes the end-efector position </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8de6b65d680e4a2cc0423f9cd101aee3a3d517f8924ac7fd03699a29d97dc52d9"></a>generic&#160;</td><td class="fielddoc"><p>It uses the classic, and generic, transform multiplication with eigen. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="aecbda5c1053ce3349223ea0659c2490c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecbda5c1053ce3349223ea0659c2490c">&#9670;&nbsp;</a></span>IkType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="classremy__robot__control_1_1Robot.html#aecbda5c1053ce3349223ea0659c2490c">remy_robot_control::Robot::IkType</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Types of Inverse Kinematics </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aecbda5c1053ce3349223ea0659c2490ca382eb179a7d78f25d89c085988b37e95"></a>transpose&#160;</td><td class="fielddoc"><p>Iterative method that uses the jacobian transpose. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecbda5c1053ce3349223ea0659c2490caf31285b27408ceebfd949e82c843a05a"></a>analytical&#160;</td><td class="fielddoc"><p>It explores the translational part of the homogeneous transform. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecbda5c1053ce3349223ea0659c2490ca3597b7c2537fc84f4eb6a9e160ad2fc4"></a>damped&#160;</td><td class="fielddoc"><p>Damped least squares. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+* </pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4a80ab2cd27f272624adedb6c50a165b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4a80ab2cd27f272624adedb6c50a165b">&#9670;&nbsp;</a></span>Robot() <span class="overload">[1/2]</span></h2>
 
@@ -670,8 +594,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void remy_robot_control::Robot::setFk </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classremy__robot__control_1_1Robot.html#a8de6b65d680e4a2cc0423f9cd101aee3">FkType</a>&#160;</td>
-          <td class="paramname"><em>type</em> = <code><a class="el" href="classremy__robot__control_1_1Robot.html#a8de6b65d680e4a2cc0423f9cd101aee3a31d4541b8e926a24f0c9b835b68cfdf3">FkType::fast</a></code></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespaceremy__robot__control.html#a4b670130468e92c8c99e26beefd37b6f">FkType</a>&#160;</td>
+          <td class="paramname"><em>type</em> = <code><a class="el" href="namespaceremy__robot__control.html#a4b670130468e92c8c99e26beefd37b6fa31d4541b8e926a24f0c9b835b68cfdf3">FkType::fast</a></code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -695,8 +619,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void remy_robot_control::Robot::setIk </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classremy__robot__control_1_1Robot.html#aecbda5c1053ce3349223ea0659c2490c">IkType</a>&#160;</td>
-          <td class="paramname"><em>type</em> = <code><a class="el" href="classremy__robot__control_1_1Robot.html#aecbda5c1053ce3349223ea0659c2490caf31285b27408ceebfd949e82c843a05a">IkType::analytical</a></code></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespaceremy__robot__control.html#a7576a7042848131c862ecb1a83e6bb6e">IkType</a>&#160;</td>
+          <td class="paramname"><em>type</em> = <code><a class="el" href="namespaceremy__robot__control.html#a7576a7042848131c862ecb1a83e6bb6eaf31285b27408ceebfd949e82c843a05a">IkType::analytical</a></code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -708,6 +632,31 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd>IKType </dd></dl>
+
+</div>
+</div>
+<a id="af796dc5d401a032acc56861d7fcb77c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af796dc5d401a032acc56861d7fcb77c4">&#9670;&nbsp;</a></span>setSettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void remy_robot_control::Robot::setSettings </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structremy__robot__control_1_1RemyRobotSettings.html">RemyRobotSettings</a> &amp;&#160;</td>
+          <td class="paramname"><em>settings</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>It sets the robot settings </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">settings</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structremy__robot__control_1_1RemyRobotSettings.html">RemyRobotSettings</a> </dd></dl>
 
 </div>
 </div>
@@ -802,50 +751,6 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::unique_ptr&lt;<a class="el" href="structremy__robot__control_1_1RemyJoints.html">RemyJoints</a>&gt; remy_robot_control::Robot::joints_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab5338d14cdb3da4bf317bcbd7301646f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5338d14cdb3da4bf317bcbd7301646f">&#9670;&nbsp;</a></span>joints_max</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::Vector3f remy_robot_control::Robot::joints_max = {M_PI, M_PI_2, M_PI}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac582caf5146d056c6e3e1aa36221b250"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac582caf5146d056c6e3e1aa36221b250">&#9670;&nbsp;</a></span>joints_min</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::Vector3f remy_robot_control::Robot::joints_min = {- M_PI, - M_PI_2, - M_PI}</td>
         </tr>
       </table>
   </td>

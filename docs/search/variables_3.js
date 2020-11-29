@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['ik_5f',['ik_',['../classremy__robot__control_1_1Robot.html#a526b6c74d861c7e737e9ba3d590e93a5',1,'remy_robot_control::Robot']]],
-  ['info_5farch',['info_arch',['../CMakeCCompilerId_8c.html#a59647e99d304ed33b15cb284c27ed391',1,'info_arch():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#a59647e99d304ed33b15cb284c27ed391',1,'info_arch():&#160;CMakeCXXCompilerId.cpp']]],
-  ['info_5fcompiler',['info_compiler',['../CMakeCCompilerId_8c.html#a4b0efeb7a5d59313986b3a0390f050f6',1,'info_compiler():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#a4b0efeb7a5d59313986b3a0390f050f6',1,'info_compiler():&#160;CMakeCXXCompilerId.cpp']]],
-  ['info_5flanguage_5fdialect_5fdefault',['info_language_dialect_default',['../CMakeCCompilerId_8c.html#a1ce162bad2fe6966ac8b33cc19e120b8',1,'info_language_dialect_default():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#a1ce162bad2fe6966ac8b33cc19e120b8',1,'info_language_dialect_default():&#160;CMakeCXXCompilerId.cpp']]],
-  ['info_5fplatform',['info_platform',['../CMakeCCompilerId_8c.html#a2321403dee54ee23f0c2fa849c60f7d4',1,'info_platform():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#a2321403dee54ee23f0c2fa849c60f7d4',1,'info_platform():&#160;CMakeCXXCompilerId.cpp']]]
+  ['features',['features',['../feature__tests_8c.html#a1582568e32f689337602a16bf8a5bff0',1,'features():&#160;feature_tests.c'],['../feature__tests_8cxx.html#a1582568e32f689337602a16bf8a5bff0',1,'features():&#160;feature_tests.cxx']]],
+  ['fk_5f',['fk_',['../classremy__robot__control_1_1Robot.html#a2daad9df3ede21e8fdb2ff7f72f5c97a',1,'remy_robot_control::Robot']]],
+  ['fktype',['fktype',['../structremy__robot__control_1_1RemyRobotSettings.html#a7fa0053666a98de39bdf7593e6e9177b',1,'remy_robot_control::RemyRobotSettings']]],
+  ['frequency',['frequency',['../structremy__robot__control_1_1RemyControlSettings.html#adcc55bdee53d1ce9f8bf98122bade5bb',1,'remy_robot_control::RemyControlSettings::frequency()'],['../structremy__robot__control_1_1RemySystemSettings.html#a8d32e0228c9d22aeb5423ed0bb390b13',1,'remy_robot_control::RemySystemSettings::frequency()']]]
 ];

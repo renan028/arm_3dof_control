@@ -89,6 +89,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a408b545aad1a709bde522e9bf1007cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab878b6f625ee1f146eee3957b2d94e49"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1RobotSystem.html#ab878b6f625ee1f146eee3957b2d94e49">~RobotSystem</a> ()</td></tr>
 <tr class="separator:ab878b6f625ee1f146eee3957b2d94e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75a82d600c41f2661108ef5710dedd45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1RobotSystem.html#a75a82d600c41f2661108ef5710dedd45">setSettings</a> (const <a class="el" href="structremy__robot__control_1_1RemySystemSettings.html">RemySystemSettings</a> &amp;settings)</td></tr>
+<tr class="separator:a75a82d600c41f2661108ef5710dedd45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac886bec6eeed0dde2d5de7e5b679a0ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1RobotSystem.html#ac886bec6eeed0dde2d5de7e5b679a0ed">setRobotSettings</a> (const <a class="el" href="structremy__robot__control_1_1RemyRobotSettings.html">RemyRobotSettings</a> &amp;settings)</td></tr>
+<tr class="separator:ac886bec6eeed0dde2d5de7e5b679a0ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a84ec1144ac9083b85fcf71f365bb71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1RobotSystem.html#a7a84ec1144ac9083b85fcf71f365bb71">start</a> (std::weak_ptr&lt; <a class="el" href="classConnection.html">Connection</a> &gt; con)</td></tr>
 <tr class="separator:a7a84ec1144ac9083b85fcf71f365bb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ff80c8b274aeca9b7084999e9664501"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1RobotSystem.html#a2ff80c8b274aeca9b7084999e9664501">stop</a> ()</td></tr>
@@ -120,6 +124,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aefb12e9894d4d6a699f88a48eee91861"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3caf0108aabe9d9d9ea60c9def23ceda"><td class="memItemLeft" align="right" valign="top">std::chrono::time_point&lt; std::chrono::system_clock &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1RobotSystem.html#a3caf0108aabe9d9d9ea60c9def23ceda">clock</a></td></tr>
 <tr class="separator:a3caf0108aabe9d9d9ea60c9def23ceda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af704513057f9bf44ef7e62abc055a06b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1RobotSystem.html#af704513057f9bf44ef7e62abc055a06b">sleep_ms</a></td></tr>
+<tr class="separator:af704513057f9bf44ef7e62abc055a06b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a000a6d5c8b2d1fc2834f7ffae5090624"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1RobotSystem.html#a000a6d5c8b2d1fc2834f7ffae5090624">encoder_resolution</a></td></tr>
+<tr class="separator:a000a6d5c8b2d1fc2834f7ffae5090624"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a408b545aad1a709bde522e9bf1007cac"></a>
@@ -248,6 +256,55 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac886bec6eeed0dde2d5de7e5b679a0ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac886bec6eeed0dde2d5de7e5b679a0ed">&#9670;&nbsp;</a></span>setRobotSettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void remy_robot_control::RobotSystem::setRobotSettings </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structremy__robot__control_1_1RemyRobotSettings.html">RemyRobotSettings</a> &amp;&#160;</td>
+          <td class="paramname"><em>settings</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>It changes the robot model settings by a given new one </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">settings</td><td>new settings </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a75a82d600c41f2661108ef5710dedd45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75a82d600c41f2661108ef5710dedd45">&#9670;&nbsp;</a></span>setSettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void remy_robot_control::RobotSystem::setSettings </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structremy__robot__control_1_1RemySystemSettings.html">RemySystemSettings</a> &amp;&#160;</td>
+          <td class="paramname"><em>settings</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>It sets the system settings </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">settings</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structremy__robot__control_1_1RemySystemSettings.html">RemySystemSettings</a> </dd></dl>
+
+</div>
+</div>
 <a id="a7a84ec1144ac9083b85fcf71f365bb71"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a84ec1144ac9083b85fcf71f365bb71">&#9670;&nbsp;</a></span>start()</h2>
 
@@ -344,6 +401,28 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a000a6d5c8b2d1fc2834f7ffae5090624"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a000a6d5c8b2d1fc2834f7ffae5090624">&#9670;&nbsp;</a></span>encoder_resolution</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int remy_robot_control::RobotSystem::encoder_resolution</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="af1bca7c15fa7cf39d81ea7c554a1a22f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af1bca7c15fa7cf39d81ea7c554a1a22f">&#9670;&nbsp;</a></span>robot</h2>
 
@@ -376,6 +455,28 @@ Private Attributes</h2></td></tr>
           <td class="memname">bool remy_robot_control::RobotSystem::save_run</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af704513057f9bf44ef7e62abc055a06b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af704513057f9bf44ef7e62abc055a06b">&#9670;&nbsp;</a></span>sleep_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int remy_robot_control::RobotSystem::sleep_ms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

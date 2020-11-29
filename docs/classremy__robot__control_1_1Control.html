@@ -63,7 +63,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
@@ -84,19 +83,16 @@ Collaboration diagram for remy_robot_control::Control:</div>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a2275987a36b7a490073fc13e1d1c3af8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Control.html#a2275987a36b7a490073fc13e1d1c3af8">ControlType</a> { <a class="el" href="classremy__robot__control_1_1Control.html#a2275987a36b7a490073fc13e1d1c3af8a0245d81956ff2e56497a60e42ea51f95">ControlType::feedfoward</a>, 
-<a class="el" href="classremy__robot__control_1_1Control.html#a2275987a36b7a490073fc13e1d1c3af8af31285b27408ceebfd949e82c843a05a">ControlType::analytical</a>
- }</td></tr>
-<tr class="separator:a2275987a36b7a490073fc13e1d1c3af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a38efad1991f9b06b4b15012163304ab1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Control.html#a38efad1991f9b06b4b15012163304ab1">Control</a> (const std::string &amp;input)</td></tr>
 <tr class="separator:a38efad1991f9b06b4b15012163304ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a936c37b901076e82dc4ff1504ff2cc60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Control.html#a936c37b901076e82dc4ff1504ff2cc60">~Control</a> ()</td></tr>
 <tr class="separator:a936c37b901076e82dc4ff1504ff2cc60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab59cad3a087beb2debce767b14f0bfae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Control.html#ab59cad3a087beb2debce767b14f0bfae">setSettings</a> (const <a class="el" href="structremy__robot__control_1_1RemyControlSettings.html">RemyControlSettings</a> &amp;settings)</td></tr>
+<tr class="separator:ab59cad3a087beb2debce767b14f0bfae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add77d4e77c2609dbf0f5ecf56f09d74a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Control.html#add77d4e77c2609dbf0f5ecf56f09d74a">setRobotSettings</a> (const <a class="el" href="structremy__robot__control_1_1RemyRobotSettings.html">RemyRobotSettings</a> &amp;settings)</td></tr>
+<tr class="separator:add77d4e77c2609dbf0f5ecf56f09d74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a877f66e05ec3da4bf630957b7a1614ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Control.html#a877f66e05ec3da4bf630957b7a1614ac">start</a> (std::weak_ptr&lt; <a class="el" href="classConnection.html">Connection</a> &gt; con)</td></tr>
 <tr class="separator:a877f66e05ec3da4bf630957b7a1614ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9734ec6352c5ca53c5b130ef60195603"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Control.html#a9734ec6352c5ca53c5b130ef60195603">stop</a> ()</td></tr>
@@ -105,7 +101,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0a7e5ad4b17cf9efa5984e9f074e5d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a4eb19b5b4e3267dcea6bd79ad8f433"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Control.html#a9a4eb19b5b4e3267dcea6bd79ad8f433">getControlSignal</a> () const</td></tr>
 <tr class="separator:a9a4eb19b5b4e3267dcea6bd79ad8f433"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49f35e565099c3fc4ce6929da6ed4537"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Control.html#a49f35e565099c3fc4ce6929da6ed4537">setControlStrategy</a> (<a class="el" href="classremy__robot__control_1_1Control.html#a2275987a36b7a490073fc13e1d1c3af8">ControlType</a> type)</td></tr>
+<tr class="memitem:a49f35e565099c3fc4ce6929da6ed4537"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Control.html#a49f35e565099c3fc4ce6929da6ed4537">setControlStrategy</a> (<a class="el" href="namespaceremy__robot__control.html#a1f64bcaf08d0a7230923ec6e3847083d">ControlType</a> type)</td></tr>
 <tr class="separator:a49f35e565099c3fc4ce6929da6ed4537"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36b65dcc3a3fa3572e115da199605917"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Control.html#a36b65dcc3a3fa3572e115da199605917">computeVelocityControl</a> (const Eigen::Vector3f &amp;<a class="el" href="test__ik_8h.html#af1f39187f6cdba930d3102d6942021d6">joints</a>, float t)</td></tr>
 <tr class="separator:a36b65dcc3a3fa3572e115da199605917"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,40 +138,12 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a03e553647056395a53711b62018c993d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77af83e88677e022c7694d7368f9a327"><td class="memItemLeft" align="right" valign="top">std::chrono::time_point&lt; std::chrono::system_clock &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Control.html#a77af83e88677e022c7694d7368f9a327">clock</a></td></tr>
 <tr class="separator:a77af83e88677e022c7694d7368f9a327"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a032b38e54514aa31fcdf0f312e1403dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1Control.html#a032b38e54514aa31fcdf0f312e1403dc">sleep_ms</a></td></tr>
+<tr class="separator:a032b38e54514aa31fcdf0f312e1403dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class reads information about the required trajectory of the robot manipulator from a file .in. It sends control signals over the connection and receives feedback from the robot. </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="a2275987a36b7a490073fc13e1d1c3af8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2275987a36b7a490073fc13e1d1c3af8">&#9670;&nbsp;</a></span>ControlType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="classremy__robot__control_1_1Control.html#a2275987a36b7a490073fc13e1d1c3af8">remy_robot_control::Control::ControlType</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Types of available Kinematics <a class="el" href="classremy__robot__control_1_1Control.html">Control</a> </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2275987a36b7a490073fc13e1d1c3af8a0245d81956ff2e56497a60e42ea51f95"></a>feedfoward&#160;</td><td class="fielddoc"><p>Damping Least Square <a class="el" href="classremy__robot__control_1_1Control.html">Control</a> with extra term to avoid singularities. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2275987a36b7a490073fc13e1d1c3af8af31285b27408ceebfd949e82c843a05a"></a>analytical&#160;</td><td class="fielddoc"><p>The analytical solution. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a38efad1991f9b06b4b15012163304ab1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a38efad1991f9b06b4b15012163304ab1">&#9670;&nbsp;</a></span>Control()</h2>
 
@@ -440,13 +408,62 @@ Note that this is the Damping Method (DLS), thus if the robot starts at a positi
         <tr>
           <td class="memname">void remy_robot_control::Control::setControlStrategy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classremy__robot__control_1_1Control.html#a2275987a36b7a490073fc13e1d1c3af8">ControlType</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceremy__robot__control.html#a1f64bcaf08d0a7230923ec6e3847083d">ControlType</a>&#160;</td>
           <td class="paramname"><em>type</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>It sets the type of control. Default is Feedfoward </p>
+
+</div>
+</div>
+<a id="add77d4e77c2609dbf0f5ecf56f09d74a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add77d4e77c2609dbf0f5ecf56f09d74a">&#9670;&nbsp;</a></span>setRobotSettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void remy_robot_control::Control::setRobotSettings </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structremy__robot__control_1_1RemyRobotSettings.html">RemyRobotSettings</a> &amp;&#160;</td>
+          <td class="paramname"><em>settings</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>It changes the robot model settings by a given new one </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">settings</td><td>new settings </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab59cad3a087beb2debce767b14f0bfae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab59cad3a087beb2debce767b14f0bfae">&#9670;&nbsp;</a></span>setSettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void remy_robot_control::Control::setSettings </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structremy__robot__control_1_1RemyControlSettings.html">RemyControlSettings</a> &amp;&#160;</td>
+          <td class="paramname"><em>settings</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>It sets the control settings </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">settings</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structremy__robot__control_1_1RemyControlSettings.html">RemyControlSettings</a> </dd></dl>
 
 </div>
 </div>
@@ -579,6 +596,28 @@ Note that this is the Damping Method (DLS), thus if the robot starts at a positi
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classremy__robot__control_1_1Robot.html">Robot</a> remy_robot_control::Control::model</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a032b38e54514aa31fcdf0f312e1403dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a032b38e54514aa31fcdf0f312e1403dc">&#9670;&nbsp;</a></span>sleep_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int remy_robot_control::Control::sleep_ms</td>
         </tr>
       </table>
   </td>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['controltype',['ControlType',['../classremy__robot__control_1_1Control.html#a2275987a36b7a490073fc13e1d1c3af8',1,'remy_robot_control::Control']]]
+  ['controltype',['ControlType',['../namespaceremy__robot__control.html#a1f64bcaf08d0a7230923ec6e3847083d',1,'remy_robot_control']]]
 ];

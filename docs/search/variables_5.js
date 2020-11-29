@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['max_5f',['max_',['../classremy__robot__control_1_1Angle.html#ac4c4ded4429f944fcf4f369ca0a4c603',1,'remy_robot_control::Angle']]],
-  ['min_5f',['min_',['../classremy__robot__control_1_1Angle.html#abf9b21a8f599a6957e23d47ad88f623d',1,'remy_robot_control::Angle']]],
-  ['model',['model',['../classremy__robot__control_1_1Control.html#ae003361b3539e28cc547d7a4893b695b',1,'remy_robot_control::Control']]],
-  ['mutex',['mutex',['../classConnection.html#a20704a4bc53a1ce7e313e162f175f814',1,'Connection']]]
+  ['joints',['joints',['../test__ik_8h.html#af1f39187f6cdba930d3102d6942021d6',1,'test_ik.h']]],
+  ['joints_5f',['joints_',['../classremy__robot__control_1_1Robot.html#a4c526bd7001f6618b6a5959a466dc258',1,'remy_robot_control::Robot']]],
+  ['joints_5fmax',['joints_max',['../structremy__robot__control_1_1RemyRobotSettings.html#a56d90c8696cf4ccacc3b8b3ad1b9c896',1,'remy_robot_control::RemyRobotSettings']]],
+  ['joints_5fmin',['joints_min',['../structremy__robot__control_1_1RemyRobotSettings.html#a2629de8257e040ebcf53adfa0dfa2364',1,'remy_robot_control::RemyRobotSettings']]],
+  ['joints_5fset',['joints_set',['../test__fk_8h.html#a0cf6e164c5ca4a5b5f625c48fe543fa5',1,'test_fk.h']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['v',['v',['../classTrajectory.html#a075c6c289e570b2ee60806df0c1a3ebb',1,'Trajectory']]],
-  ['value_5f',['value_',['../classremy__robot__control_1_1Angle.html#ad5045904e519e63ec3958c1f2896ae93',1,'remy_robot_control::Angle']]]
+  ['thread',['thread',['../classremy__robot__control_1_1Control.html#a6f7bb70dfddadab68ac8dcef62489c3c',1,'remy_robot_control::Control::thread()'],['../classremy__robot__control_1_1RobotSystem.html#ac9b7a624ac0ef8647f7030c1e2129f4d',1,'remy_robot_control::RobotSystem::thread()']]],
+  ['times',['times',['../classTrajectory.html#a7cfc0da27fb3a952ab32aa55ed74cbd2',1,'Trajectory']]],
+  ['trajectory',['trajectory',['../classremy__robot__control_1_1Control.html#aa521d85b758be0c86252e2ead856e873',1,'remy_robot_control::Control']]]
 ];
