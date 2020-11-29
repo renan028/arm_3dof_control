@@ -28,15 +28,15 @@ class Connection
       return opened_;
     }
 
+    //send data to the robot. use explicit pointer convertion
     int send(std::vector<unsigned char> &data){
       std::lock_guard<std::mutex>lock(mutex);
       data_ = data;
     };
-    //send data to the robot. use explicit pointer convertion
 
+    //receive state of the robot. record to data. use explicit pointer convertion
     int receive(std::vector<unsigned char> &data){
       std::lock_guard<std::mutex>lock(mutex);
       data = data_;
     };
-    //receive state of the robot. record to data. use explicit pointer convertion
 };

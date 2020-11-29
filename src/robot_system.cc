@@ -1,6 +1,5 @@
 #include <robot_system.h>
 #include <utils.h>
-#include <iostream>
 
 namespace remy_robot_control {
 
@@ -38,6 +37,7 @@ void RobotSystem::main(std::weak_ptr<Connection> con) {
   }
 
   clock = std::chrono::system_clock::now();
+  double elapsed_time;
   while(auto conn = con.lock()) {
     if (!conn->isOpened()) break;
     if (stop_) {
@@ -45,8 +45,12 @@ void RobotSystem::main(std::weak_ptr<Connection> con) {
     }
     auto new_clock = std::chrono::system_clock::now();
     std::chrono::duration<double> diff = new_clock - clock;
+    elapsed_time += diff.count();
+
     robot->update(control_signal, diff.count());
     auto q = robot->getJoints();
+    auto p = robot->forwardKinematics(q);
+
     mockEncoderPrecisionLost(q);
     auto qc = eigen3fToUchar3(q);
     connection->send(qc);
@@ -55,7 +59,7 @@ void RobotSystem::main(std::weak_ptr<Connection> con) {
     conn->receive(control);
     control_signal = uchar3ToEigen3f(control);
     clock = new_clock;
-    std::this_thread::sleep_for(std::chrono::milliseconds(20));
+    std::this_thread::sleep_for(std::chrono::milliseconds(1));
   }
   connection->close();
 }

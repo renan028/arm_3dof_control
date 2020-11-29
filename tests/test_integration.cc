@@ -64,8 +64,6 @@ TEST(Integration, system)
   Control control(std::move(input));
   RobotSystem system;
 
-  control.setControlStrategy(Control::ControlType::analytical);
-
   system.start(control.connection);
   control.start(system.connection);
   std::this_thread::sleep_for(std::chrono::milliseconds(10000));

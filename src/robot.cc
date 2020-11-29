@@ -1,6 +1,5 @@
 #include <robot.h>
 #include <utils.h>
-#include <iostream>
 
 namespace remy_robot_control {
 

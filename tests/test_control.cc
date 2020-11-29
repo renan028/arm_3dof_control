@@ -31,50 +31,50 @@ TEST(Control, init)
 }
 
 void assertPosition(const Eigen::Vector3f& p, float t) {
-  float tol = 1e-2;
-  if (t == 1.5) {
+  float tol = 1e-1;
+  if (abs(t - 1.5) <= 1e-3) {
     EXPECT_NEAR(p[0], 17, tol);
     EXPECT_NEAR(p[1], 0, tol);
     EXPECT_NEAR(p[2], 0, tol);
     return;
   }
 
-  if (t == 3.5) {
+  if (abs(t -3.5) <= 1e-3) {
     EXPECT_NEAR(p[0], 15, tol);
     EXPECT_NEAR(p[1], 1.5, tol);
     EXPECT_NEAR(p[2], 1.5, tol);
     return;
   }
 
-  if (t == 3.5) {
+  if (abs(t - 3.5) <= 1e-3) {
     EXPECT_NEAR(p[0], 15, tol);
     EXPECT_NEAR(p[1], 1.5, tol);
     EXPECT_NEAR(p[2], 1.5, tol);
     return;
   }
 
-  if (t == 5.0) {
+  if (abs(t - 5.0) <= 1e-3) {
     EXPECT_NEAR(p[0], 15, tol);
     EXPECT_NEAR(p[1], -1.5, tol);
     EXPECT_NEAR(p[2], 1.5, tol);
     return;
   }
 
-  if (t == 7.0) {
+  if (abs(t - 7.0) <= 1e-3) {
     EXPECT_NEAR(p[0], 15, tol);
     EXPECT_NEAR(p[1], -1.5, tol);
     EXPECT_NEAR(p[2], -1.5, tol);
     return;
   }
 
-  if (t == 9.0) {
+  if (abs(t - 9.0) <= 1e-3) {
     EXPECT_NEAR(p[0], 15, tol);
     EXPECT_NEAR(p[1], 1.5, tol);
     EXPECT_NEAR(p[2], -1.5, tol);
     return;
   }
 
-  if (t == 9.0) {
+  if (abs(t - 10.0) <= 1e-3) {
     EXPECT_NEAR(p[0], 20, tol);
     EXPECT_NEAR(p[1], 0, tol);
     EXPECT_NEAR(p[2], 0, tol);
@@ -92,6 +92,7 @@ TEST(Control, feedforward)
     control.computeVelocityControl(robot.getJoints(), t);
     robot.update(control.getControlSignal(), dt);
     auto p = robot.forwardKinematics(robot.getJoints());
+    //std::cout << "p: " << p[0] << ", " << p[1] << ", " << p[2] << ", t: " << t << "\n";
     assertPosition(p, t);
   }
 }

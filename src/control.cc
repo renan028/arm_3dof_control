@@ -5,7 +5,6 @@
 // std
 #include <fstream>
 #include <sstream>
-#include <iostream>
 
 namespace remy_robot_control {
 
@@ -62,14 +61,12 @@ void Control::main(std::weak_ptr<Connection> con) {
     if (stop_) {
       break;
     }
-    auto new_clock = std::chrono::system_clock::now();
-    std::chrono::duration<double> diff = new_clock - clock;
-    std::cout << "t: " << diff.count() << "\n";
-    
     std::vector<unsigned char> joints;
     conn->receive(joints);
     auto q = uchar3ToEigen3f(joints);
     
+    auto new_clock = std::chrono::system_clock::now();
+    std::chrono::duration<double> diff = new_clock - clock;
     computeVelocityControl(q, diff.count());
     auto u_eigen = getControlSignal();
     auto u = eigen3fToUchar3(u_eigen);
@@ -117,7 +114,7 @@ void Control::computeVelocityControl(const Eigen::Vector3f& joints,
 
 Eigen::Vector3f Control::feedforwardControl(const Eigen::Vector3f& q,
     float t) {
-  auto q0dot = Eigen::Vector3f(0.1, 0.1, 0.1);
+  auto q0dot = Eigen::Vector3f(5, 5, 5);
   auto x = model.forwardKinematics(q);
   if (!trajectory->update(t)) {
     return Eigen::Vector3f::Zero();
@@ -128,7 +125,7 @@ Eigen::Vector3f Control::feedforwardControl(const Eigen::Vector3f& q,
   auto Jt = J.transpose();
   auto JJt = J * Jt;
   auto w = JJt.determinant();
-  auto alpha = (w >= 0.001) ? 0 : 1 * (1 - w / 0.001) * (1 - w / 0.001);
+  auto alpha = (w >= 0.001) ? 0 : 0.01 * (1 - w / 0.001) * (1 - w / 0.001);
   auto L = Eigen::Matrix3f::Identity() * alpha;
   auto Ji = Jt * (JJt + L).inverse();
   return Ji * v + (Eigen::Matrix3f::Identity() - Ji * J) * q0dot;
@@ -136,7 +133,7 @@ Eigen::Vector3f Control::feedforwardControl(const Eigen::Vector3f& q,
 
 Eigen::Vector3f Control::analyticalControl(const Eigen::Vector3f& q,
     float t) {
-  // TODO: change dt here
+  // TODO: change hardcoded dt 
   auto dt = 0.02;
   if (!trajectory->update(t)) {
     return Eigen::Vector3f::Zero();
