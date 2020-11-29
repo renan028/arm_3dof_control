@@ -1,5 +1,7 @@
 #include <robot_system.h>
 #include <utils.h>
+#include <fstream>
+#include <iomanip>
 
 namespace remy_robot_control {
 
@@ -8,7 +10,8 @@ RobotSystem::RobotSystem() :
   connection(std::make_shared<Connection>()),
   stop_(false),
   control_signal(Eigen::Vector3f::Zero()),
-  clock(std::chrono::system_clock::now()) 
+  clock(std::chrono::system_clock::now()),
+  save_run(true) 
 {
 }
 
@@ -29,6 +32,11 @@ void RobotSystem::stop() {
 
 void RobotSystem::main(std::weak_ptr<Connection> con) {
   connection->open();
+  std::ofstream file;
+  if (save_run) {
+    file.open("out.csv");
+    file << "t,x,y,z,ux,uy,uz,t1,t2,t3\n";
+  }
   while(auto conn = con.lock()) {
     if (!conn->isOpened()) {
       std::this_thread::sleep_for(std::chrono::milliseconds(1));
@@ -49,7 +57,11 @@ void RobotSystem::main(std::weak_ptr<Connection> con) {
 
     robot->update(control_signal, diff.count());
     auto q = robot->getJoints();
-    auto p = robot->forwardKinematics(q);
+    
+    if (save_run) {
+      auto p = robot->forwardKinematics(q);
+      save(p, control_signal, q, elapsed_time,file);
+    }
 
     mockEncoderPrecisionLost(q);
     auto qc = eigen3fToUchar3(q);
@@ -61,6 +73,18 @@ void RobotSystem::main(std::weak_ptr<Connection> con) {
     clock = new_clock;
     std::this_thread::sleep_for(std::chrono::milliseconds(1));
   }
+  if (save_run)
+    file.close();
   connection->close();
 }
+
+void RobotSystem::save(const Eigen::Vector3f& pos, 
+    const Eigen::Vector3f& control, const Eigen::Vector3f& q, double t, 
+    std::ofstream& file) const {
+  file << std::fixed << std::setprecision(3) << t << "," << pos[0] 
+    << "," << pos[1] << "," << pos[2] << "," << control[0] << "," << 
+    control[1] << "," << control[2] << "," << q[0] << "," << q[1] << "," << 
+    q[2] << "\n";
+}
+
 } // end namespace remy_robot_control

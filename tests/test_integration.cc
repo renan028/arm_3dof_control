@@ -66,7 +66,7 @@ TEST(Integration, system)
 
   system.start(control.connection);
   control.start(system.connection);
-  std::this_thread::sleep_for(std::chrono::milliseconds(10000));
+  std::this_thread::sleep_for(std::chrono::milliseconds(11000));
 
 }
 

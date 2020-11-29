@@ -26,13 +26,24 @@ class RobotSystem {
 
     /* It stops the main thread which exchange information with the controller. */
     void stop();
-  
+
+    
     std::shared_ptr<Connection> connection;
+    bool save_run;
   
   private:
     /* The main thread sends encoder's outputs and it gets control signals */
     void main(std::weak_ptr<Connection> con);
 
+    /* A method to save the simulated data in .csv file 
+     * \param pos the current position
+     * \param control the current control
+     * \param q joints's angles
+     * \param t time
+     * \param file the file to pase
+    */
+    void save(const Eigen::Vector3f& pos, const Eigen::Vector3f& control,
+      const Eigen::Vector3f& q, double t, std::ofstream& file) const;
 };
 
 } // end namespace remy_robot_cotrol
