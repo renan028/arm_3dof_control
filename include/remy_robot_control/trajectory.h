@@ -4,7 +4,7 @@
 #include <vector>
 #include <algorithm>
 
-/* This is a very simple way to make a piecewise-linear trajectory that computes
+/** This is a very simple way to make a piecewise-linear trajectory that computes
  * position and velocity (constant) given time and waypoints. 
  * In a general case, this should be a 3D-Spline, and we would be able to 
  * choose a velocity profile, with accelerations, for instance a trapezoidal 

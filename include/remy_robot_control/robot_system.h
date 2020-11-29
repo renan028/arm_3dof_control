@@ -11,7 +11,7 @@
 namespace remy_robot_control {
   
 class RobotSystem {
-  std::unique_ptr<Robot> robot;
+  Robot robot;
   std::thread thread;
   std::atomic<bool> stop_;
   Eigen::Vector3f control_signal;
@@ -21,10 +21,10 @@ class RobotSystem {
     RobotSystem();
     ~RobotSystem();
 
-    /* It creates a thread to start the robotic system. */
+    /** It creates a thread to start the robotic system. */
     void start(std::weak_ptr<Connection> con);
 
-    /* It stops the main thread which exchange information with the controller. */
+    /** It stops the main thread which exchange information with the controller. */
     void stop();
 
     
@@ -32,10 +32,10 @@ class RobotSystem {
     bool save_run;
   
   private:
-    /* The main thread sends encoder's outputs and it gets control signals */
+    /** The main thread sends encoder's outputs and it gets control signals */
     void main(std::weak_ptr<Connection> con);
 
-    /* A method to save the simulated data in .csv file 
+    /** A method to save the simulated data in .csv file 
      * \param pos the current position
      * \param control the current control
      * \param q joints's angles

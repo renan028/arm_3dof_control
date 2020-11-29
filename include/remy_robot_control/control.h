@@ -20,7 +20,7 @@
 
 namespace remy_robot_control {
 
-/*
+/**
  * This class reads information about the required trajectory of the robot 
  * manipulator from a file .in. It sends control signals over the connection 
  * and receives feedback from the robot.
@@ -38,37 +38,36 @@ class Control {
     Control(const std::string& input);
     ~Control();
 
-    /* It creates a thread to control the arm. */
+    /** It creates a thread to control the arm. */
     void start(std::weak_ptr<Connection> con);
 
-    /* It stops the thread which controls the arm. */
+    /** It stops the thread which controls the arm. */
     void stop();
 
-    /* It gets the waypoints of the current trajectory
+    /** It gets the waypoints of the current trajectory
      \return waypoints
     */
     std::vector<Eigen::Vector4f> getWaypoints() const;
 
-    /* It gets the current control signal
+    /** It gets the current control signal
      \return control_signal
     */
     Eigen::Vector3f getControlSignal() const;
 
-    /* Types of available Kinematics Control */
+    /** Types of available Kinematics Control */
     enum class ControlType {
-      feedfoward,
-      analytical
+      feedfoward, ///< Damping Least Square Control with extra term to avoid singularities
+      analytical ///< The analytical solution
     };
 
-    /* It sets the type of control. Default is Feedfoward */
+    /** It sets the type of control. Default is Feedfoward */
     void setControlStrategy(ControlType type);
 
-    /* It solves the Kinematic Control problem for the 3-DoF (elbow) remy robot.
+    /** It solves the Kinematic Control problem for the 3-DoF (elbow) remy robot.
      * It computes the control signal for robot kinematics. There are some
      * control strategies, thus please refer to the documentation of the one
      * you want to use: 
      * \sa feedforwardControl
-     * \sa pidControl
      * \sa analyticalControl
     */
     void computeVelocityControl(const Eigen::Vector3f& joints, float t);
@@ -76,39 +75,41 @@ class Control {
     std::shared_ptr<Connection> connection;
 
   private:
-    /* It read the input file 
+    /** It read the input file 
      * \param input absolute file path
     */
     void readInput(const std::string& input);
 
-    /* This is the main thread of the controller. It periodically sends control 
+    /** This is the main thread of the controller. It periodically sends control 
      * signals to the robot.
     */
     void main(std::weak_ptr<Connection> con);
   
-    /* The robot motion can be described by: qdot = u, where u is the velocity 
-     * control signal (vector) applied to the motor drive of each joint.
-     * We have: xdot = J * qdot = J * u, where J is the Jacobian
-     * Then: u = inv(J) * v(t), where v(t) is the cartesian control signal.
-     * e = xs(t) - x, where xs is the desired cartesian position, x the current
-     * edot = xsdot - v(t), then we may choose a proportional plus feedforward
-     * control law:
-     * v(t) = xsdot + Le, where L = lambda * I (identity matrix), lambda > 0
+    /** The robot motion can be described by: \f$\dot{q} = u\f$, where \f$u\f$ 
+     * is the velocity control signal (vector) applied to the motor drive of each joint. \n
+     * We have: \f$\dot{x} = J * \dot{q} = J * u\f$, where \f$J\f$ is the Jacobian \n
+     * Then: \f$u = J^{-1} * v(t)\f$, where \f$v(t)\f$ is the cartesian control signal. \n
+     * \f$e = x_s(t) - x\f$, where \f$x_s\f$ is the desired cartesian position, 
+     * \f$x\f$ the current position. \n  
+     * \f$\dot{e} = \dot{x_s} - v(t)\f$, then we may choose a proportional plus 
+     * feedforward control law: \n
+     * \f$ v(t) = \dot{x_s} + \Lambda * e \f$, where \f$L = \lambda * I\f$ 
+     * (identity matrix), \f$\lambda > 0\f$ \n
      * Note that this is the Damping Method (DLS), thus if the robot starts at 
-     * a position where J(q0) is singular and v is in its nullspace, it may
-     * be impossible to find the inverse kinematics iteratively, and the control
-     * fails. The solution is to introduce a term belonging to the nullsapce of
-     * J:
-     * u = inv(J) * v + (I - inv(J) * J) * q0, where q0 is an arbitrary joint 
-     * velocities to avoid singularities.
+     * a position where \f$J(q0)\f$ is singular and \f$v\f$ is in its nullspace, 
+     * it may be impossible to find the inverse kinematics iteratively, and the 
+     * control fails. The solution is to introduce a term belonging to the 
+     * nullsapce of \f$J\f$: \n
+     * \f$u = J^{-1} * v + (I - J^{-1} * J) * q_0\f$, where \f$q_0\f$ is an 
+     * arbitrary joint velocities to avoid singularities.
      * \param joints the current robot joints
      * \param t current time (0 means start time)
     */
     Eigen::Vector3f feedforwardControl(const Eigen::Vector3f& joints, 
       float t);
 
-    /* The Analytical Control solution uses the analytical inverse kinematics
-     * and it applies u = dq/dt = (qs - q) / dt
+    /** The Analytical Control solution uses the analytical inverse kinematics
+     * and it applies \f$u = \frac{dq}{dt} = (q_s - q) / dt\f$
      * \param joints the current robot joints
      * \param t current time (0 means start time)
     */
