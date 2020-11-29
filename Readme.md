@@ -22,7 +22,7 @@ And the following joints' limits:
 <br />
 
 ## [Robot](https://github.com/renan028/robot_control/blob/master/include/remy_robot_control/robot.h)
----
+
 The [Robot](https://renan028.github.io/robot_control/classremy__robot__control_1_1Robot.html) 
 class provides forward and inverse kinematics for the given manipulator. 
 
@@ -51,7 +51,7 @@ was implemented to deal with angle limits and to properly wrap an angle between 
 <br />
 
 ## [Control](https://github.com/renan028/robot_control/blob/master/include/remy_robot_control/control.h)
----
+
 The [Control](https://renan028.github.io/robot_control/classremy__robot__control_1_1Control.html) has a model of the Robot and it provides Kinematic Control. There are two implemented solutions for 
 the Kinematic Control:
 * [Proportional + Feedforward with DLS](https://renan028.github.io/robot_control/classremy__robot__control_1_1Control.html#ac540f0e69b0754df81d9f8a28c82c01d), which is a more generic control but requires some parameter tuning. It also has an extra term to avoid singularities (which is the case). Math is explained in the source file.
@@ -90,7 +90,6 @@ The **update(t)** method calculates the desired position/velocity for the end-ef
 <br />
 
 ## [RoboticSystem](https://github.com/renan028/robot_control/blob/master/include/remy_robot_control/robot_system.h)
----
 
 The [RoboticSystem](https://renan028.github.io/robot_control/classremy__robot__control_1_1RobotSystem.html) mocks the robot (it has a Robot class), encoders, and it communicates with the Controller through **connection**. The System has it own parameters [RemySystemSetting](https://renan028.github.io/robot_control/structremy__robot__control_1_1RemySystemSettings.html).
 
@@ -109,20 +108,18 @@ The frequency is 1000 Hz.
 <br />
 
 ## [Configuration](https://github.com/renan028/robot_control/blob/master/include/remy_robot_control/config/config.json)
----
 
 The Configuration is a JSON file and it is read in the main file to set Control, Robot and System parameters.
 
 <br />
 
 ## 3rdParty and Dependencies
----
+
 The system uses the header-only file json.hpp for json parser. It also uses GTest for unittests and Eigen (Required) for all math.
 
 <br />
 
 ## Installation
----
 
 To install and run the system, clone this repository and run, in the root folder:
 ```
@@ -145,7 +142,6 @@ To run unittests, one just need to run them individually, for instance:
 <br />
 
 ## Results
----
 
 The output, available in the "result" folder represents the following images:
 
