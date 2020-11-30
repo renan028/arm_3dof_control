@@ -3,6 +3,7 @@
 // remy
 #include <robot.h>
 #include <connection.h>
+#include <system_logger.h>
 
 // std
 #include <thread>
@@ -18,6 +19,7 @@ class RobotSystem {
   std::chrono::time_point<std::chrono::system_clock> clock;
   int sleep_ms;
   int encoder_resolution;
+  std::unique_ptr<SystemLogger> logger;
   
   public:
     RobotSystem();
@@ -46,16 +48,6 @@ class RobotSystem {
   private:
     /** The main thread sends encoder's outputs and it gets control signals */
     void main(std::weak_ptr<Connection> con);
-
-    /** A method to save the simulated data in .csv file 
-     * \param pos the current position
-     * \param control the current control
-     * \param q joints's angles
-     * \param t time
-     * \param file the file to pase
-    */
-    void save(const Eigen::Vector3f& pos, const Eigen::Vector3f& control,
-      const Eigen::Vector3f& q, double t, std::ofstream& file) const;
 };
 
 } // end namespace remy_robot_cotrol
