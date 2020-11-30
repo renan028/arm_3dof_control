@@ -133,7 +133,6 @@ Eigen::Vector3f Robot::jacobTransposeIK(float x, float y, float z,
     q[2] = joints_->q1(q[2]);
     ++count ;
   }
-  auto x_ = forwardKinematics(q);
   return q;
 }
 
@@ -158,7 +157,6 @@ Eigen::Vector3f Robot::dampedIK(float x, float y, float z,
     q[2] = joints_->q1(q[2]);
     ++count ;
   }
-  auto x_ = forwardKinematics(q);
   return q;
 }
 
