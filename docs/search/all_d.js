@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['parsecontrolsetting',['parseControlSetting',['../namespaceremy__robot__control.html#aab531c8999091d3fe267c80f61b13fd3',1,'remy_robot_control']]],
-  ['parsejsonfieldatt',['parseJsonFieldAtt',['../namespaceremy__robot__control.html#a2f91bbdd1e6d249ae689378c6ae032cb',1,'remy_robot_control']]],
-  ['parserobotsetting',['parseRobotSetting',['../namespaceremy__robot__control.html#a55ee1b21b3cedb11742cb34a2a4de271',1,'remy_robot_control']]],
-  ['parsesystemsetting',['parseSystemSetting',['../namespaceremy__robot__control.html#a2a8eb204cf5d011669318a2ffba131b7',1,'remy_robot_control']]],
-  ['platform_5fid',['PLATFORM_ID',['../CMakeCCompilerId_8c.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCXXCompilerId.cpp']]]
+  ['q1',['q1',['../structremy__robot__control_1_1RemyJoints.html#a978803b7f45c3ba7833c51d4b3456b92',1,'remy_robot_control::RemyJoints']]],
+  ['q2',['q2',['../structremy__robot__control_1_1RemyJoints.html#a7c3ee18904097063b407b41aa9d9093d',1,'remy_robot_control::RemyJoints']]],
+  ['q3',['q3',['../structremy__robot__control_1_1RemyJoints.html#a69f95534e7e8f168fb3392b74fd6367c',1,'remy_robot_control::RemyJoints']]]
 ];

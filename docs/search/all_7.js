@@ -1,11 +1,13 @@
 var searchData=
 [
-  ['ik_5f',['ik_',['../classremy__robot__control_1_1Robot.html#a526b6c74d861c7e737e9ba3d590e93a5',1,'remy_robot_control::Robot']]],
-  ['iktype',['iktype',['../structremy__robot__control_1_1RemyRobotSettings.html#afca9c31043d45c5fe7dbba1579c0eda1',1,'remy_robot_control::RemyRobotSettings::iktype()'],['../namespaceremy__robot__control.html#a7576a7042848131c862ecb1a83e6bb6e',1,'remy_robot_control::IkType()']]],
-  ['info_5farch',['info_arch',['../CMakeCCompilerId_8c.html#a59647e99d304ed33b15cb284c27ed391',1,'info_arch():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#a59647e99d304ed33b15cb284c27ed391',1,'info_arch():&#160;CMakeCXXCompilerId.cpp']]],
-  ['info_5fcompiler',['info_compiler',['../CMakeCCompilerId_8c.html#a4b0efeb7a5d59313986b3a0390f050f6',1,'info_compiler():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#a4b0efeb7a5d59313986b3a0390f050f6',1,'info_compiler():&#160;CMakeCXXCompilerId.cpp']]],
-  ['info_5flanguage_5fdialect_5fdefault',['info_language_dialect_default',['../CMakeCCompilerId_8c.html#a1ce162bad2fe6966ac8b33cc19e120b8',1,'info_language_dialect_default():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#a1ce162bad2fe6966ac8b33cc19e120b8',1,'info_language_dialect_default():&#160;CMakeCXXCompilerId.cpp']]],
-  ['info_5fplatform',['info_platform',['../CMakeCCompilerId_8c.html#a2321403dee54ee23f0c2fa849c60f7d4',1,'info_platform():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#a2321403dee54ee23f0c2fa849c60f7d4',1,'info_platform():&#160;CMakeCXXCompilerId.cpp']]],
-  ['inversekinematics',['inverseKinematics',['../classremy__robot__control_1_1Robot.html#a557fe1629b3043e0baa6756a30ca8083',1,'remy_robot_control::Robot']]],
-  ['isopened',['isOpened',['../classConnection.html#af542987c5cfab9395af738b02cfbdd08',1,'Connection']]]
+  ['jacob',['jacob',['../classremy__robot__control_1_1Robot.html#a8d22e19bf12d69fa99046786f7c7057a',1,'remy_robot_control::Robot']]],
+  ['jacobm',['JacobM',['../namespaceremy__robot__control.html#a0fb5c31149eb801e1f838db7f308c88d',1,'remy_robot_control']]],
+  ['jacobmp',['JacobMP',['../namespaceremy__robot__control.html#ac744a8ea15bf68b11e3341bc72ea9342',1,'remy_robot_control']]],
+  ['jacobtransposeik',['jacobTransposeIK',['../classremy__robot__control_1_1Robot.html#afc2192f6be3c5e0407632f218b9fb5d3',1,'remy_robot_control::Robot']]],
+  ['joints',['joints',['../test__ik_8h.html#af1f39187f6cdba930d3102d6942021d6',1,'test_ik.h']]],
+  ['joints_5f',['joints_',['../classremy__robot__control_1_1Robot.html#a4c526bd7001f6618b6a5959a466dc258',1,'remy_robot_control::Robot']]],
+  ['joints_5fmax',['joints_max',['../structremy__robot__control_1_1RemyRobotSettings.html#a56d90c8696cf4ccacc3b8b3ad1b9c896',1,'remy_robot_control::RemyRobotSettings']]],
+  ['joints_5fmin',['joints_min',['../structremy__robot__control_1_1RemyRobotSettings.html#a2629de8257e040ebcf53adfa0dfa2364',1,'remy_robot_control::RemyRobotSettings']]],
+  ['joints_5fset',['joints_set',['../test__fk_8h.html#a0cf6e164c5ca4a5b5f625c48fe543fa5',1,'test_fk.h']]],
+  ['json',['json',['../namespaceremy__robot__control.html#a565a2740a1863f9a854f4522b77e0cbc',1,'remy_robot_control::json()'],['../main_8cc.html#ab701e3ac61a85b337ec5c1abaad6742d',1,'json():&#160;main.cc'],['../test__json__parser_8h.html#ab701e3ac61a85b337ec5c1abaad6742d',1,'json():&#160;test_json_parser.h']]]
 ];

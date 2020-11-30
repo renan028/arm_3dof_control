@@ -2,9 +2,6 @@ var searchData=
 [
   ['fast',['fast',['../namespaceremy__robot__control.html#a4b670130468e92c8c99e26beefd37b6fa31d4541b8e926a24f0c9b835b68cfdf3',1,'remy_robot_control']]],
   ['fastforwardkinematics',['fastForwardKinematics',['../classremy__robot__control_1_1Robot.html#a65d08160e5c0f91011014dd6f2694e0b',1,'remy_robot_control::Robot']]],
-  ['feature_5ftests_2ec',['feature_tests.c',['../feature__tests_8c.html',1,'']]],
-  ['feature_5ftests_2ecxx',['feature_tests.cxx',['../feature__tests_8cxx.html',1,'']]],
-  ['features',['features',['../feature__tests_8c.html#a1582568e32f689337602a16bf8a5bff0',1,'features():&#160;feature_tests.c'],['../feature__tests_8cxx.html#a1582568e32f689337602a16bf8a5bff0',1,'features():&#160;feature_tests.cxx']]],
   ['feedforwardcontrol',['feedforwardControl',['../classremy__robot__control_1_1Control.html#ac540f0e69b0754df81d9f8a28c82c01d',1,'remy_robot_control::Control']]],
   ['feedfoward',['feedfoward',['../namespaceremy__robot__control.html#a1f64bcaf08d0a7230923ec6e3847083da0245d81956ff2e56497a60e42ea51f95',1,'remy_robot_control']]],
   ['file',['file',['../classremy__robot__control_1_1SystemLogger.html#ae662e36064027c322a438084f474c0fd',1,'remy_robot_control::SystemLogger']]],

@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['x',['x',['../classTrajectory.html#a28d59cc512dec46e0bf858625d799d13',1,'Trajectory']]],
-  ['xyz',['xyz',['../test__ik_8h.html#a22fb8f8d6e0801dda8de950c55bebf8e',1,'test_ik.h']]]
+  ['_7econnection',['~Connection',['../classConnection.html#a2e4352edf667bea83001569e9da8a24d',1,'Connection']]],
+  ['_7econtrol',['~Control',['../classremy__robot__control_1_1Control.html#a936c37b901076e82dc4ff1504ff2cc60',1,'remy_robot_control::Control']]],
+  ['_7erobot',['~Robot',['../classremy__robot__control_1_1Robot.html#a52af488679a6dc5d6670e0af48ee2e94',1,'remy_robot_control::Robot']]],
+  ['_7erobotsystem',['~RobotSystem',['../classremy__robot__control_1_1RobotSystem.html#ab878b6f625ee1f146eee3957b2d94e49',1,'remy_robot_control::RobotSystem']]],
+  ['_7esystemlogger',['~SystemLogger',['../classremy__robot__control_1_1SystemLogger.html#a8f02bdf24e7495321963a3df495f4aab',1,'remy_robot_control::SystemLogger']]]
 ];
