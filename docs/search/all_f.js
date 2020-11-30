@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['remyrobotcontrol',['RemyRobotControl',['../md_Readme.html',1,'']]],
+  ['remyrobotcontrol',['RemyRobotControl',['../index.html',1,'']]],
   ['readinput',['readInput',['../classremy__robot__control_1_1Control.html#a1d2595bc47e24f02c5cb1e89a87703bc',1,'remy_robot_control::Control']]],
   ['readme_2emd',['Readme.md',['../Readme_8md.html',1,'']]],
   ['receive',['receive',['../classConnection.html#a0933502afb40bbdf61fb28621a10a599',1,'Connection']]],
