@@ -1,5 +1,6 @@
 var menudata={children:[
 {text:"Main Page",url:"index.html"},
+{text:"Related Pages",url:"pages.html"},
 {text:"Namespaces",url:"namespaces.html",children:[
 {text:"Namespace List",url:"namespaces.html"},
 {text:"Namespace Members",url:"namespacemembers.html",children:[
@@ -20,6 +21,7 @@ var menudata={children:[
 {text:"g",url:"functions.html#index_g"},
 {text:"i",url:"functions.html#index_i"},
 {text:"j",url:"functions.html#index_j"},
+{text:"l",url:"functions.html#index_l"},
 {text:"m",url:"functions.html#index_m"},
 {text:"n",url:"functions.html#index_n"},
 {text:"o",url:"functions.html#index_o"},
@@ -55,6 +57,7 @@ var menudata={children:[
 {text:"f",url:"functions_vars.html#index_f"},
 {text:"i",url:"functions_vars.html#index_i"},
 {text:"j",url:"functions_vars.html#index_j"},
+{text:"l",url:"functions_vars.html#index_l"},
 {text:"m",url:"functions_vars.html#index_m"},
 {text:"o",url:"functions_vars.html#index_o"},
 {text:"q",url:"functions_vars.html#index_q"},

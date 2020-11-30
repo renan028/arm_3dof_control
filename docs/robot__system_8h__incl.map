@@ -1,7 +1,8 @@
 <map id="include/remy_robot_control/robot_system.h" name="include/remy_robot_control/robot_system.h">
-<area shape="rect" id="node2" href="$robot_8h.html" title="robot.h" alt="" coords="228,95,290,121"/>
-<area shape="rect" id="node11" href="$connection_8h.html" title="connection.h" alt="" coords="547,95,643,121"/>
-<area shape="rect" id="node3" href="$types_8h.html" title="types.h" alt="" coords="226,169,292,196"/>
-<area shape="rect" id="node8" href="$angle_8h.html" title="angle.h" alt="" coords="378,244,442,271"/>
-<area shape="rect" id="node9" href="$trajectory_8h.html" title="trajectory.h" alt="" coords="216,244,302,271"/>
+<area shape="rect" id="node2" href="$robot_8h.html" title="robot.h" alt="" coords="433,95,495,121"/>
+<area shape="rect" id="node11" href="$connection_8h.html" title="connection.h" alt="" coords="688,95,784,121"/>
+<area shape="rect" id="node14" href="$system__logger_8h.html" title="system_logger.h" alt="" coords="877,95,995,121"/>
+<area shape="rect" id="node3" href="$types_8h.html" title="types.h" alt="" coords="211,169,277,196"/>
+<area shape="rect" id="node8" href="$angle_8h.html" title="angle.h" alt="" coords="363,244,427,271"/>
+<area shape="rect" id="node9" href="$trajectory_8h.html" title="trajectory.h" alt="" coords="201,244,287,271"/>
 </map>

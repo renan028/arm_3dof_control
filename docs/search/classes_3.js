@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trajectory',['Trajectory',['../classTrajectory.html',1,'']]]
+  ['systemlogger',['SystemLogger',['../classremy__robot__control_1_1SystemLogger.html',1,'remy_robot_control']]]
 ];

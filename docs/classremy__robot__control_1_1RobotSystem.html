@@ -109,8 +109,6 @@ Public Attributes</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a835107d4e95d693c0af945062874223d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1RobotSystem.html#a835107d4e95d693c0af945062874223d">main</a> (std::weak_ptr&lt; <a class="el" href="classConnection.html">Connection</a> &gt; con)</td></tr>
 <tr class="separator:a835107d4e95d693c0af945062874223d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61d668027b3b5dad921ffb8e400470e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1RobotSystem.html#a61d668027b3b5dad921ffb8e400470e6">save</a> (const Eigen::Vector3f &amp;pos, const Eigen::Vector3f &amp;control, const Eigen::Vector3f &amp;q, double t, std::ofstream &amp;file) const</td></tr>
-<tr class="separator:a61d668027b3b5dad921ffb8e400470e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -128,6 +126,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af704513057f9bf44ef7e62abc055a06b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a000a6d5c8b2d1fc2834f7ffae5090624"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1RobotSystem.html#a000a6d5c8b2d1fc2834f7ffae5090624">encoder_resolution</a></td></tr>
 <tr class="separator:a000a6d5c8b2d1fc2834f7ffae5090624"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a072dc6c83291fc76c8b0eaa5c23fe0b3"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classremy__robot__control_1_1SystemLogger.html">SystemLogger</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classremy__robot__control_1_1RobotSystem.html#a072dc6c83291fc76c8b0eaa5c23fe0b3">logger</a></td></tr>
+<tr class="separator:a072dc6c83291fc76c8b0eaa5c23fe0b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a408b545aad1a709bde522e9bf1007cac"></a>
@@ -189,70 +189,6 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The main thread sends encoder's outputs and it gets control signals </p>
-
-</div>
-</div>
-<a id="a61d668027b3b5dad921ffb8e400470e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61d668027b3b5dad921ffb8e400470e6">&#9670;&nbsp;</a></span>save()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void remy_robot_control::RobotSystem::save </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::Vector3f &amp;&#160;</td>
-          <td class="paramname"><em>pos</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::Vector3f &amp;&#160;</td>
-          <td class="paramname"><em>control</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::Vector3f &amp;&#160;</td>
-          <td class="paramname"><em>q</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>t</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::ofstream &amp;&#160;</td>
-          <td class="paramname"><em>file</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>A method to save the simulated data in .csv file </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pos</td><td>the current position </td></tr>
-    <tr><td class="paramname">control</td><td>the current control </td></tr>
-    <tr><td class="paramname">q</td><td>joints's angles </td></tr>
-    <tr><td class="paramname">t</td><td>time </td></tr>
-    <tr><td class="paramname">file</td><td>the file to pase </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -412,6 +348,28 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">int remy_robot_control::RobotSystem::encoder_resolution</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a072dc6c83291fc76c8b0eaa5c23fe0b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a072dc6c83291fc76c8b0eaa5c23fe0b3">&#9670;&nbsp;</a></span>logger</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classremy__robot__control_1_1SystemLogger.html">SystemLogger</a>&gt; remy_robot_control::RobotSystem::logger</td>
         </tr>
       </table>
   </td>

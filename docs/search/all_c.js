@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['parsecontrolsetting',['parseControlSetting',['../namespaceremy__robot__control.html#aab531c8999091d3fe267c80f61b13fd3',1,'remy_robot_control']]],
-  ['parsejsonfieldatt',['parseJsonFieldAtt',['../namespaceremy__robot__control.html#a2f91bbdd1e6d249ae689378c6ae032cb',1,'remy_robot_control']]],
-  ['parserobotsetting',['parseRobotSetting',['../namespaceremy__robot__control.html#a55ee1b21b3cedb11742cb34a2a4de271',1,'remy_robot_control']]],
-  ['parsesystemsetting',['parseSystemSetting',['../namespaceremy__robot__control.html#a2a8eb204cf5d011669318a2ffba131b7',1,'remy_robot_control']]],
-  ['platform_5fid',['PLATFORM_ID',['../CMakeCCompilerId_8c.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCXXCompilerId.cpp']]]
+  ['open',['open',['../classConnection.html#acafa4278fa94cf5a49a6660d83b12e4c',1,'Connection']]],
+  ['opened_5f',['opened_',['../classConnection.html#a30efeee8f29a3108ae4c9057fff02ca7',1,'Connection']]],
+  ['operator_28_29',['operator()',['../classremy__robot__control_1_1Angle.html#aa4dcfd685a38e16687fdf24eeeacb420',1,'remy_robot_control::Angle::operator()(void)'],['../classremy__robot__control_1_1Angle.html#a94b007637f89c0faae8d97b9035791b3',1,'remy_robot_control::Angle::operator()(const T &amp;new_value)']]],
+  ['operator_2b',['operator+',['../classremy__robot__control_1_1Angle.html#aa554e18913ffa71fe4901ae9d2924e25',1,'remy_robot_control::Angle']]],
+  ['operator_2b_3d',['operator+=',['../classremy__robot__control_1_1Angle.html#a2146ded1a8ada9fb8a690a09de4ef1ea',1,'remy_robot_control::Angle']]],
+  ['operator_3d',['operator=',['../classremy__robot__control_1_1Angle.html#a1d244fd4834eb25119bda5875fa09052',1,'remy_robot_control::Angle::operator=(const Angle &amp;other)'],['../classremy__robot__control_1_1Angle.html#a54a586b25846ccd2c821ba2cf1da88a7',1,'remy_robot_control::Angle::operator=(const T &amp;other)']]]
 ];
