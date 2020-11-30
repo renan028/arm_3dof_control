@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RemyRobotControl: Main Page</title>
+<title>RemyRobotControl: RemyRobotControl</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -59,10 +59,127 @@ $(function() {
 
 <div class="header">
   <div class="headertitle">
-<div class="title">RemyRobotControl Documentation</div>  </div>
+<div class="title">RemyRobotControl </div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><p>This package provides a simple Kinematic Control for a 3-DOF (only revolute joints) manipulator with the following DH parameters:</p>
+<table class="doxtable">
+<tr>
+<th>Link </th><th>Twist </th><th>Length </th><th>Offset </th><th>angle  </th></tr>
+<tr>
+<td>0 </td><td>0 </td><td>0 </td><td>- </td><td>- </td></tr>
+<tr>
+<td>1 </td><td>pi/2 </td><td>10 </td><td>- </td><td>t1 </td></tr>
+<tr>
+<td>2 </td><td>0 </td><td>5 </td><td>- </td><td>t2 </td></tr>
+<tr>
+<td>3 </td><td>0 </td><td>5 </td><td>- </td><td>t3 </td></tr>
+</table>
+<p>And the following joints' limits: </p><table class="doxtable">
+<tr>
+<th>Joint </th><th>Min </th><th>Max  </th></tr>
+<tr>
+<td>1 </td><td>-pi </td><td>pi </td></tr>
+<tr>
+<td>2 </td><td>-pi/2 </td><td>pi/2 </td></tr>
+<tr>
+<td>3 </td><td>-pi </td><td>pi </td></tr>
+</table>
+<h2></h2>
+<p><br />
+</p>
+<h2><a href="https://github.com/renan028/robot_control/blob/master/include/remy_robot_control/robot.h">Robot</a></h2>
+<p>The <a href="https://renan028.github.io/robot_control/classremy__robot__control_1_1Robot.html">Robot</a> class provides forward and inverse kinematics for the given manipulator.</p>
+<p>There are three implemented solutions for the inverse kinematics problem:</p><ul>
+<li><a href="https://renan028.github.io/robot_control/classremy__robot__control_1_1Robot.html#a1120c7173f56ff5293bc29604c9d2c37">Analytical</a></li>
+<li><a href="https://renan028.github.io/robot_control/classremy__robot__control_1_1Robot.html#ae0f7f33fa2f5bc4cdd83f2c2c97db683">Damped Least Square</a></li>
+<li><a href="https://renan028.github.io/robot_control/classremy__robot__control_1_1Robot.html#afc2192f6be3c5e0407632f218b9fb5d3">Jacobian Transpose</a></li>
+</ul>
+<p>There are two implemented solutions for the forward kinematics problem:</p><ul>
+<li><a href="https://renan028.github.io/robot_control/classremy__robot__control_1_1Robot.html#ab8a09d0556766fd8ba041091c7f5c1cc">Generic</a> solution</li>
+<li><a href="https://renan028.github.io/robot_control/classremy__robot__control_1_1Robot.html#a65d08160e5c0f91011014dd6f2694e0b">Fast</a> (project specific) solution</li>
+</ul>
+<p>Unittests for all <a href="https://github.com/renan028/robot_control/blob/master/tests/test_ik.h">IK</a> and <a href="https://github.com/renan028/robot_control/blob/master/tests/test_fk.h">FK</a> are available.</p>
+<p>All equations and math for each solution are documented in the source code. <br />
+ It is important to note that the code is flexible enough to integrate new solutions, because it explores the function object wrapper concept with <a href="https://renan028.github.io/robot_control/classremy__robot__control_1_1Robot.html#a2daad9df3ede21e8fdb2ff7f72f5c97a">lambda functions</a>.</p>
+<p>The Robot's settings can also be changed at runtime, by using the custom <a href="https://renan028.github.io/robot_control/structremy__robot__control_1_1RemyRobotSettings.html">RemyRobotSettings</a> struct.</p>
+<p>A custom class <a href="https://renan028.github.io/robot_control/classremy__robot__control_1_1Angle.html">Angles</a> was implemented to deal with angle limits and to properly wrap an angle between [-pi,pi]. Therefore, the robot uses the custom <a href="https://github.com/renan028/robot_control/blob/master/include/remy_robot_control/types.h#L40">RemyJoints</a> struct, and joints manipulation are transparent. One may see the <a href="https://github.com/renan028/robot_control/blob/master/tests/test_angle.h">unittests</a> to fully understand.</p>
+<p><br />
+</p>
+<h2><a href="https://github.com/renan028/robot_control/blob/master/include/remy_robot_control/control.h">Control</a></h2>
+<p>The <a href="https://renan028.github.io/robot_control/classremy__robot__control_1_1Control.html">Control</a> has a model of the Robot and it provides Kinematic Control. There are two implemented solutions for the Kinematic Control:</p><ul>
+<li><a href="https://renan028.github.io/robot_control/classremy__robot__control_1_1Control.html#ac540f0e69b0754df81d9f8a28c82c01d">Proportional + Feedforward with DLS</a>, which is a more generic control but requires some parameter tuning. It also has an extra term to avoid singularities (which is the case). Math is explained in the source file.</li>
+<li><a href="https://renan028.github.io/robot_control/classremy__robot__control_1_1Control.html#a92381b3009f3c3258318833500aa3a1a">Analytical</a>, a project specific solution which uses the exact inverse kinematics.</li>
+</ul>
+<p>As in the Robot file, the concept of function object wrapper was explored for flexibility.</p>
+<p>The Control settings can be changed with the custom <a href="https://renan028.github.io/robot_control/structremy__robot__control_1_1RemyControlSettings.html">RemyControlSettings</a> struct. The minimum value (50) for the control's frequency is verified.</p>
+<p>The Control's constructor requires a string argument, which is the absolute path to the input (waypoints) file. It has a method to parse that file.</p>
+<p>The Control has a <b>shared_ptr</b> to <b>connection</b>. In this particular setup and example, that <em>shared_ptr&lt;connection&gt;</em> is shared (as a <em>weak_ptr</em>) to the RoboticSystem for communication between threads.</p>
+<blockquote class="doxtable">
+<p>**_Note:_** In this architecture, I am using threads and sharing resources through the <b>connection</b> class. An inter-process system would be a more real/generic approach here, but it is not in the scope of this task. You don't need to use ROS, however, and one of the faster solutions for a two publisher/subscriber architecture would be to use ZMQ, as already implemented by me in this other project <a href="https://github.com/MiRON-project/ZMQServer">here</a>. </p>
+</blockquote>
+<p>The <b>start()/stop()</b> methods initializes/pauses the communication with the RoboticSystem (sends/receives data through <em>connections</em>). For testing purposes, the <b>start(weak_ptr&lt;connection&gt;)</b> method requires the <b>connection</b> pointer of the RoboticSystem (see below in the RoboticSystem section). The <a href="https://github.com/renan028/robot_control/blob/master/src/control.cc#L69">start</a> loop works as following:</p>
+<ol type="1">
+<li>Check if connection is open and the resource is available (<em>weak_ptr</em>)</li>
+<li>Receive the joints values and <a href="https://github.com/renan028/robot_control/blob/master/include/remy_robot_control/utils.h#L30">convert</a> it to float by pointer cast. The unittests of signal conversion are available <a href="https://github.com/renan028/robot_control/blob/master/tests/test_data_convert.h">here</a></li>
+<li>Compute new control signal</li>
+<li>Convert control signal to vector&lt;char&gt;</li>
+<li>Send control signal</li>
+</ol>
+<p>The Controller frequency is 50Hz.</p>
+<p>For better understanding, the Control Unittests are available <a href="https://github.com/renan028/robot_control/blob/master/tests/test_control.cc">here</a>.</p>
+<h3><a href="https://github.com/renan028/robot_control/blob/master/include/remy_robot_control/trajectory.h">Trajectory</a></h3>
+<p>The waypoints are fed in the Controller, which generates a <a href="https://renan028.github.io/robot_control/classTrajectory.html">trajectory</a>, a continuous and feasible path (cartesian coordinates for the end-effector) over time. A piecewise-linear interpolation of the points was chosen, then a constant velocity in cartesian space is acquired.</p>
+<blockquote class="doxtable">
+<p>**_Note:_** The standard choice (and actually the choice for production) would be a 3DSpline composed of a third/fourth polynomial degree (at least continuous accelerations). It would be possible to evaluate and constraint torques. Since we are dealing with kinematics and no saturation, we kept it simple. </p>
+</blockquote>
+<p>The <b>update(t)</b> method calculates the desired position/velocity for the end-effector. Unitests are available <a href="https://github.com/renan028/robot_control/blob/master/tests/test_trajectory.h">here</a>.</p>
+<p><br />
+</p>
+<h2><a href="https://github.com/renan028/robot_control/blob/master/include/remy_robot_control/robot_system.h">RoboticSystem</a></h2>
+<p>The <a href="https://renan028.github.io/robot_control/classremy__robot__control_1_1RobotSystem.html">RoboticSystem</a> mocks the robot (it has a Robot class), encoders, and it communicates with the Controller through <b>connection</b>. The System has it own parameters <a href="https://renan028.github.io/robot_control/structremy__robot__control_1_1RemySystemSettings.html">RemySystemSetting</a>.</p>
+<p>To start communication, one must pass the shared communication resource <b>connection</b>. See the <a href="https://github.com/renan028/robot_control/blob/master/tests/test_integration.cc">test_integration</a>. The main communication loop is available at <a href="https://github.com/renan028/robot_control/blob/master/src/robot_system.cc#L59">start</a>, and it works as following:</p>
+<ol type="1">
+<li>Check if connection is open and the resource is available (<em>weak_ptr</em>)</li>
+<li>Move the manipulator with the last control input by the elapsed time</li>
+<li>Get the new manipulator joints from encoder, by mocking the <a href="https://github.com/renan028/robot_control/blob/master/src/utils.cc#L68">Encoder</a> precision lost</li>
+<li><a href="https://github.com/renan028/robot_control/blob/master/src/utils.cc#L24">Convert</a> the joints value to vector&lt;char&gt; with pointer cast</li>
+<li>Send the data through <b>connection</b></li>
+<li>Receive the control signal</li>
+</ol>
+<p>The frequency is 1000 Hz.</p>
+<p><br />
+</p>
+<h2><a href="https://github.com/renan028/robot_control/blob/master/include/remy_robot_control/config/config.json">Configuration</a></h2>
+<p>The Configuration is a JSON file and it is read in the main file to set Control, Robot and System parameters.</p>
+<p><br />
+</p>
+<h2>3rdParty and Dependencies</h2>
+<p>The system uses the header-only file json.hpp for json parser. It also uses GTest for unittests and Eigen (Required) for all math.</p>
+<p><br />
+</p>
+<h2>Installation</h2>
+<p>To install and run the system, clone this repository and run, in the root folder: </p><div class="fragment"><div class="line">mkdir build</div><div class="line">cd build</div><div class="line">cmake ..</div><div class="line">make</div></div><!-- fragment --><p> Then, in the build folder, run (the two arguments are required): </p><div class="fragment"><div class="line">./RemyRobotControl &lt;path_to_input&gt; &lt;path_to_config&gt;</div></div><!-- fragment --><p> The output file "out.csv" is composed of time, the end-effector path (x,y,z), the joints path (theta1, theta2, theta3) and control signal for each joint.</p>
+<p>To run unittests, one just need to run them individually, for instance: </p><div class="fragment"><div class="line">./RemyRobotControl_Test</div></div><!-- fragment --><p><br />
+</p>
+<h2>Results</h2>
+<p>The output, available in the "result" folder represents the following images:</p>
+<div class="image">
+<img src="https://raw.githubusercontent.com/renan028/robot_control/master/images/path.png" width="640"/>
+</div>
+ <div class="image">
+<img src="https://raw.githubusercontent.com/renan028/robot_control/master/images/xyz.png" width="640"/>
+</div>
+ <div class="image">
+<img src="https://raw.githubusercontent.com/renan028/robot_control/master/images/joints.png" width="640"/>
+</div>
+ <div class="image">
+<img src="https://raw.githubusercontent.com/renan028/robot_control/master/images/control.png" width="640"/>
+</div>
+ <div class="image">
+<img src="https://raw.githubusercontent.com/renan028/robot_control/master/images/error.png" width="640"/>
+</div>
+ </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
